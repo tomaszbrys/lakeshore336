@@ -1,0 +1,68 @@
+##
+## Trying to setup a template for a generic callbackfunction. 
+## Through the .cmd and substitutions files any signal could be connected
+##
+
+## Defining records used by the callback snl function        *********
+## The signals to add callback to is defined in the .cmd file *********
+
+
+## Callback PV. Set to TRUE when controlled PV is within time
+## and range window
+record(bi, "$(P):CB$(CHANNEL)") {
+    field(PINI, "YES")
+}
+
+## timeout PV. Set to TRUE when timedout.
+record(bi, "$(P):CBerr$(CHANNEL)") {
+}
+
+
+## User settable parameters ********************
+
+## Requested range CBthres for controlled parameter
+record(ai, "$(P):CBthres$(CHANNEL)") {
+
+}
+
+## Requested equilibrium time for the controlled parameter
+record(ai, "$(P):CBsettl_t$(CHANNEL)") {
+
+}
+
+## Adjustable parameter for defining time when "failure" have occured,
+## set to 1 when equilibrium not reached within time.
+record(ai, "$(P):CBtout$(CHANNEL)") {
+
+}
+
+##Records used by the SNL "clock" *****************************
+
+## PV that drives the state machine "timers"
+record(calc, "$(P):CBclk$(CHANNEL)") 
+{
+	field(DESC, "1Hz Counter")
+	field(SCAN,"1 second")
+	field(CALC,"(A + 1)" )
+        field(INPA, "$(P):CBclk$(CHANNEL).VAL NPP NMS")
+}
+
+## Records below should be local variables instead! Now used for dev*********
+
+## timer for max time waiting for stabilese window (below) to be met
+record(ai, "$(P):CBtot_t$(CHANNEL)") {
+
+}
+
+## timer for spcified window time to stabilise
+record(ai, "$(P):CBtsettl$(CHANNEL)") {
+
+}
+## PV for update on current state of the state machine
+record(stringin, "$(P):CBstate$(CHANNEL)") {
+
+}
+
+
+
+

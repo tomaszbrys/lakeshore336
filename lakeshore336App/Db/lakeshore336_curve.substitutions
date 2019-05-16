@@ -1,0 +1,7 @@
+file "lakeshore336_curve.template"
+{
+	pattern { CurveType }
+
+	{  File }
+	{  ""   }
+}

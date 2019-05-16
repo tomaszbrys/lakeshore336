@@ -1,0 +1,91 @@
+# This is included in lakeshore336.template
+# This template is for outputs 1 and 2, which can provide heater power.
+
+################################################################
+# Read records
+################################################################
+
+## 
+## Read the heater output value.
+##
+record(ai, "$(P):HTR$(OUT)") {
+  field(DTYP, "stream")
+  field(SDIS, "$(P):DISABLE_POLL")
+  field(INP, "@lakeshore336.proto getHTR($(OUT)) $(PORT) $(ADDR)")
+  field(SCAN, "$(SCAN) second")
+  field(PREC, "1")
+  field(EGU, "%")
+}
+
+## 
+## Define the strings and values for this record.
+##
+record(mbbi, "$(P):RANGE$(OUT)") {
+  field(ZRST, "Off")
+  field(ONST, "Range1/Low")
+  field(TWST, "Range2/Medium")
+  field(THST, "Range3/High")
+  field(FRST, "Range4")	
+  field(FVST, "Range5")
+}
+
+##
+## Define the strings and values for this record.
+##
+record(mbbi, "$(P):OMM$(OUT)") {
+  field(ZRST, "Off")
+  field(ONST, "Closed Loop PID")
+  field(TWST, "Zone")
+  field(THST, "Open Loop")
+}
+
+## 
+## Define the strings and values for this record.
+##
+record(mbbo, "$(P):RANGE_S$(OUT)") {
+  field(ZRST, "Off")
+  field(ONST, "Range1/Low")
+  field(TWST, "Range2/Medium")
+  field(THST, "Range3/High")
+  field(FRST, "Range4")	
+  field(FVST, "Range5")
+}
+
+##
+## Define the strings and values for this record.
+##
+record(mbbo, "$(P):OMM_S$(OUT)") {
+  field(ZRST, "Off")
+  field(ONST, "Closed Loop PID")
+  field(TWST, "Zone")
+  field(THST, "Open Loop")
+}
+
+# Read the LS336 relay status(adding it in this file just to get 2 relay records through macro..)
+record (bi, "$(P):RELAYST$(OUT)") {
+  field(DTYP, "stream")
+  field(SDIS, "$(P):DISABLE_POLL")
+  field(DESC, "read relay status")
+  field(INP, "@lakeshore336.proto getRELAYST($(OUT)) $(PORT) $(ADDR)")
+  field(SCAN, "5 second")
+
+}
+
+
+######Write to records######
+
+# Toggle the LS336 relay (adding it in this file just to get 2 relay records through macro..)
+record (bo, "$(P):RELAY$(OUT)") {
+  field(DTYP, "stream")
+  field(SDIS, "$(P):DISABLE_POLL")
+  field(DESC, "set relay")
+  field(OUT, "@lakeshore336.proto setRELAY($(OUT)) $(PORT) $(ADDR)")
+  field(SCAN, "Passive")
+
+}
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+###################################################################################
+
+
+record(asyn, "$(P):ASYN") {
+  field(DTYP, "asynRecordDevice")
+  field(PORT, "$(ASYNPORT)")
+}
+
+
+record(bi, "$(P):ConnectedR") {
+  field(INP,  "$(P):ASYN.CNCT CP")
+  field(ONAM, "Connected")
+  field(ZNAM, "Disconnected")
+  field(ZSV,  "MAJOR")
+}
+
+
+record(calcout, "$(P):iConnectEventGen") {
+  field(INPA, "$(P):ASYN.CNCT CP")
+  field(VAL,  "0")
+  field(CALC, "A")
+  field(OOPT, "Transition To Non-zero")
+  field(OUT,  "$(P):iConnectEvent.PROC")
+}
+
+
+record(calc, "$(P):iConnectEvent") {
+  field(INPA, "$(P):iConnectEvent")
+  field(CALC, "A+1")
+  field(VAL,  "0")
+}

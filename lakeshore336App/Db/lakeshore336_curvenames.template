@@ -1,0 +1,7 @@
+record(stringin, "$(P):Curve$(CurveIndex):Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name($(CurveIndex)) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+

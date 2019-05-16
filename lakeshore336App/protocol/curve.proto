@@ -1,0 +1,148 @@
+##################################################
+# General Settings
+##################################################
+
+InTerminator = CR LF;
+OutTerminator = LF;
+
+ReplyTimeout = 1000;
+
+  
+#########################
+#
+# Get the name of a curve
+#
+#  Expects a stringout PV
+#
+#########################
+get_curve_name {
+  out "CRVHDR? \${1}";
+  in  "%[^,],"       # Curve Name
+      "%*[^,],"      # Curve Serial       //ignore
+      "%*d,"         # Curve Format       //ignore
+      "%*f,"         # Curve Limit        //ignore
+      "%*d";         # Curve Coefficient  //ignore
+}
+
+
+#############################
+#
+# Get the metadata of a curve
+#
+#  Expects an scalcout PV
+#
+#############################
+get_curve_header {
+  out "CRVHDR? %(A)d";
+  in  "%(AA)[^,],"   # Curve Name
+      "%(BB)[^,],"   # Curve Serial
+      "%(C)d,"       # Curve Format
+      "%(D)f,"       # Curve Limit
+      "%(E)d";       # Curve Coefficient
+}
+
+
+################################
+#
+# Modify the metadata of a curve
+#
+#  Expects an scalcout PV
+#
+################################
+write_curve_header {
+  out "CRVHDR "
+      "%(A)d,"       # Curve Entry
+      "%(BB)s,"      # Curve Name
+      "%(CC)s,"      # Curve Serial
+      "%(D)d,"       # Curve Format
+      "%(E)f,"       # Curve Limit
+      "%(F)d";       # Curve Coefficient
+}
+
+
+################################
+#
+# Modify a breakpoint of a curve
+#
+#  Expects a calcout PV
+#
+################################
+write_curve_point {
+  out "CRVPT "
+      "%(A)d,"       # Curve Entry
+      "%(B)d,"       # Data Point Index
+      "%(C)6f,"      # Data Point Sensor Unit
+      "%(D)6f";      # Data Point Kelvin
+}
+
+
+
+  
+###########################################################
+#
+# Read and parse a ".340" format curve file
+#  (the filename should already be set with set_curve_file)
+#
+#  Expects an scalcout PV
+#
+###########################################################
+parse_340_file {
+  Terminator    = "";
+  InTerminator  = "";
+  OutTerminator = "";
+
+  ExtraInput = ignore;
+
+  connect 1000;
+
+  in  "Sensor Model:\_"             "%(AA)15s"                     "%*[\r\n]"
+      "Serial Number:\_"            "%(BB)10s"                     "%*[\r\n]"
+      "Data Format:\_"              "%(C)i"     "%*[ ./()a-zA-Z]"  "%*[\r\n]"
+      "SetPoint Limit:\_"           "%(D)f"     "%*[ ./()a-zA-Z]"  "%*[\r\n]"
+      "Temperature coefficient:\_"  "%(E)i"     "%*[ ./()a-zA-Z]"  "%*[\r\n]"
+      "Number of Breakpoints:\_"    "%(F)i"                        "%*[\r\n]"
+                                                                   "%*[\r\n]"
+      "%*[ ./()a-zA-Z]"                                            "%*[\r\n]"
+      "%(\${1}:Breakpoints)f";
+
+  disconnect;
+
+  @mismatch {
+    disconnect;
+  }
+}
+
+
+###########################################################
+#
+# Read and parse a ".curve" format curve file
+#  (the filename should already be set with set_curve_file)
+#
+# NOTE: reading/installing spline curves is not supported
+#
+#  Expects an scalcout PV
+#
+###########################################################
+parse_curve_file {
+  Terminator    = "";
+  InTerminator  = "";
+  OutTerminator = "";
+
+  ExtraInput = ignore;
+
+  connect 1000;
+
+  in  "Sensor Model:\_"             "%(AA)15s"                       "%*[\r\n]"
+      "Serial Number:\_"            "%(BB)10s"                       "%*[\r\n]"
+      "Data Format:\_"              "%(C)i"     "%*[ ./()\ta-zA-Z]"  "%*[\r\n]"
+      "SetPoint Limit:\_"           "%(D)f"                          "%*[\r\n]"
+                                                                     "%*[\r\n]"
+      "%*[ ()\ta-zA-Z]"                                              "%*[\r\n]"
+      "%(\${1}:Breakpoints)f";
+
+  disconnect;
+
+  @mismatch {
+    disconnect;
+  }
+}

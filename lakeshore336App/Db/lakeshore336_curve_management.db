@@ -1,0 +1,450 @@
+include "connection_tracking.db"
+include "lakeshore336_curvenames.db"
+include "lakeshore336_curve.db"
+
+
+################################################################################
+#
+# Calibration curve management (query)
+#
+################################################################################
+record(longout, "$(P):iZero")
+{
+  field(DESC, "Unmodifiable zero value")
+  field(PINI, "YES")
+  field(VAL,  "0")
+  field(DISP, "1")
+}
+
+
+record(longin, "$(P):Curve:iConnectEvent-FO")
+{
+  field(INP,  "$(P):iConnectEvent CP")
+  field(FLNK, "$(P):Curve:QueryNames")
+  field(DISV, "0")
+  field(SDIS, "$(P):iConnectEvent")
+}
+
+
+record(bo, "$(P):Curve:QueryNames")
+{
+  field(DESC, "Initiate query of names of all curves")
+  field(DOL,  "$(P):iZero")
+  field(OUT,  "$(P):Curve:iModifyLink.A PP")
+  field(OMSL, "closed_loop")
+}
+
+
+record(scalcout, "$(P):Curve:iModifyLink")
+{
+  field(DESC, "Generate new FLNK")
+  field(CALC, "A:=(A < 59 ? A + 1 : 0);A")
+  field(DOPT, "Use OCAL")
+  field(OCAL, "PRINTF('$(P):Curve%d:Name',A)")
+  field(OOPT, "When Non-zero")
+  field(OUT,  "$(P):Curve:iQueryNameHelper PP")
+}
+
+
+record(stringout, "$(P):Curve:iQueryNameHelper")
+{
+  field(DESC, "Write the new FLNK")
+  field(OUT,  "$(P):Curve:iQueryName.FLNK CA")
+  field(FLNK, "$(P):Curve:iQueryName.PROC CA")
+}
+
+
+record(bo, "$(P):Curve:iQueryName")
+{
+  field(DESC, "Process PV at FLNK")
+}
+
+
+record(bo, "$(P):Curve:iNameRead")
+{
+  field(DESC, "Curve name retrieved")
+  field(FLNK, "$(P):Curve:iModifyLink")
+  field(SDIS, "$(P):Curve:iModifyLink.A")
+  field(DISV, "0")
+}
+
+
+record(longout, "$(P):Curve:Query")
+{
+  field(DESC, "Retrieve curve metadata")
+  field(DRVL, "1")
+  field(DRVH, "59")
+  field(OUT,  "$(P):Curve:iMetadata.A PP")
+}
+
+
+record(scalcout, "$(P):Curve:iMetadata")
+{
+  field(DESC, "Retrieve curve metadata")
+  field(DTYP, "stream")
+  field(OUT,  "@curve.proto get_curve_header $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iMetadata-FO")
+  field(CALC, "1")
+}
+
+record(sseq, "$(P):Curve:iMetadata-FO")
+{
+  field(DESC, "Distribute curve metadata")
+
+  field(DOL1, "$(P):Curve:iMetadata.AA MSS")
+  field(LNK1, "$(P):Curve:SensorModel PP MSS")
+
+  field(DOL2, "$(P):Curve:iMetadata.BB MSS")
+  field(LNK2, "$(P):Curve:Serial PP MSS")
+
+  field(DOL3, "$(P):Curve:iMetadata.C MSS")
+  field(LNK3, "$(P):Curve:DataFormat PP MSS")
+
+  field(DOL4, "$(P):Curve:iMetadata.D MSS")
+  field(LNK4, "$(P):Curve:SetpointLimit PP MSS")
+
+  field(DOL5, "$(P):Curve:iMetadata.E MSS")
+  field(LNK5, "$(P):Curve:TempCoeff PP MSS")
+}
+
+
+################################################################################
+#
+# Curvefile management
+#
+################################################################################
+record(stringout, "$(P):CurveFile:Pattern")
+{
+  field(DESC, "The pattern to match filenames against")
+  field(DTYP, "stream")
+  field(OUT,  "@file.proto set_pattern $(ASYNCALIBPORT)")
+}
+
+
+record(waveform, "$(P):CurveFile:PatternMatches")
+{
+  field(DESC, "The array of filenames matching Pattern")
+  field(DTYP, "stream")
+  field(INP,  "@file.proto get_pattern_matches_iointr $(ASYNCALIBPORT)")
+  field(SCAN, "I/O Intr")
+  field(FTVL, "STRING")
+  field(NELM, "50")
+  field(FLNK, "$(P):CurveFile:NumPatternMatches")
+}
+
+
+record(longin, "$(P):CurveFile:NumPatternMatches")
+{
+  field(DESC, "Th number of mathces for Pattern")
+  field(INP,  "$(P):CurveFile:PatternMatches.NORD MSS")
+}
+
+
+record(stringout, "$(P):CurveFile:Filename")
+{
+  field(DESC, "The filename of the curve file")
+}
+
+
+record(mbbo, "$(P):CurveFile:Type")
+{
+  field(DESC, "The type of the curve file")
+  field(ZRVL, "1")
+  field(ZRST, ".340")
+  field(ONVL, "2")
+  field(ONST, ".curve")
+  field(VAL,  "0")
+  field(PINI, "YES")
+}
+
+
+record(sseq, "$(P):CurveFile:iReset340Metadata")
+{
+  field(DESC, "Reset curve metadata")
+
+  field(DOL1, "0")
+  field(LNK1, "$(P):CurveFile:ParseStatus PP")
+
+  field(STR2, "")
+  field(LNK2, "$(P):CurveFile:i340Metadata.AA")
+
+  field(STR3, "")
+  field(LNK3, "$(P):CurveFile:i340Metadata.BB")
+
+  field(DOL4, "0")
+  field(LNK4, "$(P):CurveFile:i340Metadata.C")
+
+  field(DOL5, "0")
+  field(LNK5, "$(P):CurveFile:i340Metadata.D")
+
+  field(DOL6, "0")
+  field(LNK6, "$(P):CurveFile:i340Metadata.E")
+
+  field(DOL7, "0")
+  field(LNK7, "$(P):CurveFile:i340Metadata.F")
+
+  field(DOL8, "0")
+  field(LNK8, "$(P):CurveFile:Breakpoints PP")
+}
+
+
+record(sseq, "$(P):CurveFile:iResetCurveMetadata")
+{
+  field(DESC, "Reset curve metadata")
+
+  field(DOL1, "0")
+  field(LNK1, "$(P):CurveFile:ParseStatus PP")
+
+  field(STR2, "")
+  field(LNK2, "$(P):CurveFile:iCurveMetadata.AA")
+
+  field(STR3, "")
+  field(LNK3, "$(P):CurveFile:iCurveMetadata.BB")
+
+  field(DOL4, "0")
+  field(LNK4, "$(P):CurveFile:iCurveMetadata.C")
+
+  field(DOL5, "0")
+  field(LNK5, "$(P):CurveFile:iCurveMetadata.D")
+
+  field(DOL6, "0")
+  field(LNK6, "$(P):CurveFile:Breakpoints PP")
+}
+
+
+record(sseq, "$(P):CurveFile:Parse")
+{
+  field(DESC, "Parse curve file")
+
+  field(LNK1, "$(P):CurveFile:iReset340Metadata PP")
+
+  field(LNK2, "$(P):CurveFile:iResetCurveMetadata PP")
+
+  field(DOL3, "1")
+  field(LNK3, "$(P):CurveFile:iSetFilename.PROC")
+}
+
+
+record(bi, "$(P):CurveFile:ParseStatus")
+{
+  field(DESC, "The status of parsing")
+  field(ZNAM, "N/A")
+  field(ONAM, "DONE")
+}
+
+
+record(stringout, "$(P):CurveFile:iSetFilename")
+{
+  field(DESC, "Register filename")
+  field(DOL,  "$(P):CurveFile:Filename")
+  field(DTYP, "stream")
+  field(OUT,  "@file.proto set_filename $(ASYNCALIBPORT) 1")
+  field(OMSL, "closed_loop")
+  field(FLNK, "$(P):CurveFile:iParseMetadata")
+}
+
+
+record(seq, "$(P):CurveFile:iParseMetadata")
+{
+  field(DESC, "Parse .340 or .curve metadata")
+  field(SELM, "Specified")
+  field(SELL, "$(P):CurveFile:Type.RVAL")
+
+  field(LNK1, "$(P):CurveFile:i340Metadata PP")
+  field(LNK2, "$(P):CurveFile:iCurveMetadata PP")
+}
+
+
+record(scalcout, "$(P):CurveFile:i340Metadata")
+{
+  field(DESC, "Parse curve metadata from .340 file")
+  field(DTYP, "stream")
+  field(OUT,  "@curve.proto parse_340_file($(P):CurveFile) $(ASYNCALIBPORT) 2")
+  field(FLNK, "$(P):CurveFile:i340Metadata-FO")
+  field(CALC, "1")
+}
+
+
+record(sseq, "$(P):CurveFile:i340Metadata-FO")
+{
+  field(DESC, "Distribute curve metadata")
+
+  field(DOL1, "$(P):CurveFile:i340Metadata.AA MSS")
+  field(LNK1, "$(P):CurveFile:SensorModel PP MSS")
+
+  field(DOL2, "$(P):CurveFile:i340Metadata.BB MSS")
+  field(LNK2, "$(P):CurveFile:Serial PP MSS")
+
+  field(DOL3, "$(P):CurveFile:i340Metadata.C MSS")
+  field(LNK3, "$(P):CurveFile:DataFormat PP MSS")
+
+  field(DOL4, "$(P):CurveFile:i340Metadata.D MSS")
+  field(LNK4, "$(P):CurveFile:SetpointLimit PP MSS")
+
+  field(DOL5, "$(P):CurveFile:i340Metadata.E MSS")
+  field(LNK5, "$(P):CurveFile:TempCoeff PP MSS")
+
+  field(DOL6, "$(P):CurveFile:i340Metadata.F MSS")
+  field(LNK6, "$(P):CurveFile:NumBreakpoints PP MSS")
+
+  field(DOL7, "1")
+  field(LNK7, "$(P):CurveFile:ParseStatus PP MSS")
+}
+
+
+record(scalcout, "$(P):CurveFile:iCurveMetadata")
+{
+  field(DESC, "Parse curve metadata from .curve file")
+  field(DTYP, "stream")
+  field(OUT,  "@curve.proto parse_curve_file($(P):CurveFile) $(ASYNCALIBPORT) 2")
+  field(FLNK, "$(P):CurveFile:iCurveMetadata-FO")
+  field(CALC, "1")
+}
+
+
+record(calc, "$(P):CurveFile:iCalcNumBreakpoints")
+{
+  field(DESC, "Calculate number of breakpoints")
+  field(INPA, "$(P):CurveFile:Breakpoints.NORD")
+  field(INPB, "$(P):CurveFile:DataFormat.RVAL MSS")
+  field(INPC, "$(P):CurveFile:iCurveMetadata.C MSS")
+  field(CALC, "(C > 4) ? A/3 : A/2")
+}
+
+
+record(sseq, "$(P):CurveFile:iCurveMetadata-FO")
+{
+  field(DESC, "Distribute curve metadata")
+
+  field(DOL1, "$(P):CurveFile:iCurveMetadata.AA MSS")
+  field(LNK1, "$(P):CurveFile:SensorModel PP MSS")
+
+  field(DOL2, "$(P):CurveFile:iCurveMetadata.BB MSS")
+  field(LNK2, "$(P):CurveFile:Serial PP MSS")
+
+  field(DOL3, "$(P):CurveFile:iCurveMetadata.C MSS")
+  field(LNK3, "$(P):CurveFile:DataFormat PP MSS")
+
+  field(DOL4, "$(P):CurveFile:iCurveMetadata.D MSS")
+  field(LNK4, "$(P):CurveFile:SetpointLimit PP MSS")
+
+#  field(DOL5, "$(P):CurveFile:iMetadata.E MSS")
+#  field(LNK5, "$(P):CurveFile:TempCoeff PP MSS")
+
+  field(DOL6, "$(P):CurveFile:iCalcNumBreakpoints PP MSS")
+  field(LNK6, "$(P):CurveFile:NumBreakpoints PP MSS")
+
+  field(DOL7, "1")
+  field(LNK7, "$(P):CurveFile:ParseStatus PP MSS")
+}
+
+
+record(waveform, "$(P):CurveFile:Breakpoints")
+{
+  field(DESC, "The breakpoints of the curve")
+  field(FTVL, "FLOAT")
+  field(NELM, "600")
+}
+
+
+################################################################################
+#
+# Calibration curve management (installation)
+#
+################################################################################
+record(longout, "$(P):CurveFile:InstallEntry")
+{
+  field(DESC, "The entry of the new curve")
+  field(VAL,  "21")
+  field(LOPR, "21")
+  field(DRVL, "21")
+  field(DRVH, "59")
+  field(HOPR, "59")
+}
+
+
+record(bo, "$(P):CurveFile:Install")
+{
+  field(DESC, "Install curve")
+}
+
+
+record(mbbi, "$(P):CurveFile:InstallStatus")
+{
+  field(DESC, "Status of the installation")
+  field(ZRST, "N/A")
+  field(ONST, "Installed")
+
+  field(TWST, "Failed - Format")
+  field(TWSV, "MAJOR")
+
+  field(THST, "Failed - BrkNum")
+  field(THSV, "MAJOR")
+
+  field(FRST, "Failed - Header")
+  field(FRSV, "MAJOR")
+
+  field(FVST, "Failed - BrkPt")
+  field(FVSV, "MAJOR")
+
+  field(UNSV, "MAJOR")
+}
+
+
+record(longout, "$(P):CurveFile:iInstallIndex")
+{
+  field(DESC, "The breakpoint index")
+  field(DRVL, "1")
+  field(DRVH, "200")
+}
+
+
+record(ao, "$(P):CurveFile:iInstallSensorUnit")
+{
+  field(DESC, "The sensor unit part of the breakpoint")
+}
+
+
+record(ao, "$(P):CurveFile:iInstallKelvin")
+{
+  field(DESC, "The temperature part of the breakpoint")
+}
+
+
+record(scalcout, "$(P):CurveFile:iInstallHeader")
+{
+  field(DESC, "Install curve metadata")
+  field(INPA, "$(P):CurveFile:InstallEntry")
+  field(INBB, "$(P):CurveFile:SensorModel")
+  field(INCC, "$(P):CurveFile:Serial")
+  field(INPD, "$(P):CurveFile:DataFormat")
+  field(INPE, "$(P):CurveFile:SetpointLimit")
+  field(INPF, "$(P):CurveFile:TempCoeff")
+  field(DTYP, "stream")
+  field(OUT,  "@curve.proto write_curve_header $(ASYNPORT)")
+  field(CALC, "1")
+}
+
+
+record(calcout, "$(P):CurveFile:iInstallPoint")
+{
+  field(DESC, "Install breakpoint")
+  field(INPA, "$(P):CurveFile:InstallEntry")
+  field(INPB, "$(P):CurveFile:iInstallIndex")
+  field(INPC, "$(P):CurveFile:iInstallSensorUnit")
+  field(INPD, "$(P):CurveFile:iInstallKelvin")
+  field(DTYP, "stream")
+  field(OUT,  "@curve.proto write_curve_point $(ASYNPORT)")
+  field(FLNK, "$(P):CurveFile:iPointInstalled")
+  field(CALC, "1")
+}
+
+
+record(calc, "$(P):CurveFile:iPointInstalled")
+{
+  field(DESC, "Breakpoint installed")
+  field(INPA, "$(P):CurveFile:iPointInstalled")
+  field(CALC, "A+1")
+  field(PINI, "YES")
+  field(VAL,  "0")
+}

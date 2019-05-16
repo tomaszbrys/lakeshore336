@@ -1,0 +1,56 @@
+record(stringin, "$(P):Curve$(CurveType):SensorModel")
+{
+  field(DESC, "Name of the curve/model of the sensor")
+}
+
+
+record(stringin, "$(P):Curve$(CurveType):Serial")
+{
+  field(DESC, "The serial number of the curve")
+}
+
+
+record(mbbi, "$(P):Curve$(CurveType):DataFormat")
+{
+  field(DESC, "The data format of the curve")
+  field(ONVL, "1")
+  field(ONST, "mV/K")
+  field(TWVL, "2")
+  field(TWST, "V/K")
+  field(THVL, "3")
+  field(THST, "Ohm/K")
+  field(FRVL, "4")
+  field(FRST, "log Ohm/K")
+  field(FVVL, "5")
+  field(FVST, "N/A (5)")
+  field(SXVL, "6")
+  field(SXST, "V/K (Spline)")
+  field(SVVL, "7")
+  field(SVST, "Ohm/K (Spline)")
+  field(EIVL, "8")
+  field(EIST, "N/A (8)")
+  field(UNSV, "MAJOR")
+}
+
+
+record(ai, "$(P):Curve$(CurveType):SetpointLimit")
+{
+  field(DESC, "The setpoint limit of the curve")
+}
+
+
+record(mbbi, "$(P):Curve$(CurveType):TempCoeff")
+{
+  field(DESC, "The temperature coefficient of the curve")
+  field(ONVL, "1")
+  field(ONST, "Negative")
+  field(TWVL, "2")
+  field(TWST, "Positive")
+  field(UNSV, "MAJOR")
+}
+
+
+record(ai, "$(P):Curve$(CurveType):NumBreakpoints")
+{
+  field(DESC, "The number of breakpoints in the curve")
+}

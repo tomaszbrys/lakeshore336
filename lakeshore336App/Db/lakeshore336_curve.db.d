@@ -1,0 +1,1 @@
+lakeshore336App/Db/lakeshore336_curve.db: lakeshore336App/Db/lakeshore336_curve.template

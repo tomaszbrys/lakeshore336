@@ -1,0 +1,112 @@
+record(stringin, "$(P):CurveFile:SensorModel")
+{
+  field(DESC, "Name of the curve/model of the sensor")
+}
+
+
+record(stringin, "$(P):CurveFile:Serial")
+{
+  field(DESC, "The serial number of the curve")
+}
+
+
+record(mbbi, "$(P):CurveFile:DataFormat")
+{
+  field(DESC, "The data format of the curve")
+  field(ONVL, "1")
+  field(ONST, "mV/K")
+  field(TWVL, "2")
+  field(TWST, "V/K")
+  field(THVL, "3")
+  field(THST, "Ohm/K")
+  field(FRVL, "4")
+  field(FRST, "log Ohm/K")
+  field(FVVL, "5")
+  field(FVST, "N/A (5)")
+  field(SXVL, "6")
+  field(SXST, "V/K (Spline)")
+  field(SVVL, "7")
+  field(SVST, "Ohm/K (Spline)")
+  field(EIVL, "8")
+  field(EIST, "N/A (8)")
+  field(UNSV, "MAJOR")
+}
+
+
+record(ai, "$(P):CurveFile:SetpointLimit")
+{
+  field(DESC, "The setpoint limit of the curve")
+}
+
+
+record(mbbi, "$(P):CurveFile:TempCoeff")
+{
+  field(DESC, "The temperature coefficient of the curve")
+  field(ONVL, "1")
+  field(ONST, "Negative")
+  field(TWVL, "2")
+  field(TWST, "Positive")
+  field(UNSV, "MAJOR")
+}
+
+
+record(ai, "$(P):CurveFile:NumBreakpoints")
+{
+  field(DESC, "The number of breakpoints in the curve")
+}
+record(stringin, "$(P):Curve:SensorModel")
+{
+  field(DESC, "Name of the curve/model of the sensor")
+}
+
+
+record(stringin, "$(P):Curve:Serial")
+{
+  field(DESC, "The serial number of the curve")
+}
+
+
+record(mbbi, "$(P):Curve:DataFormat")
+{
+  field(DESC, "The data format of the curve")
+  field(ONVL, "1")
+  field(ONST, "mV/K")
+  field(TWVL, "2")
+  field(TWST, "V/K")
+  field(THVL, "3")
+  field(THST, "Ohm/K")
+  field(FRVL, "4")
+  field(FRST, "log Ohm/K")
+  field(FVVL, "5")
+  field(FVST, "N/A (5)")
+  field(SXVL, "6")
+  field(SXST, "V/K (Spline)")
+  field(SVVL, "7")
+  field(SVST, "Ohm/K (Spline)")
+  field(EIVL, "8")
+  field(EIST, "N/A (8)")
+  field(UNSV, "MAJOR")
+}
+
+
+record(ai, "$(P):Curve:SetpointLimit")
+{
+  field(DESC, "The setpoint limit of the curve")
+}
+
+
+record(mbbi, "$(P):Curve:TempCoeff")
+{
+  field(DESC, "The temperature coefficient of the curve")
+  field(ONVL, "1")
+  field(ONST, "Negative")
+  field(TWVL, "2")
+  field(TWST, "Positive")
+  field(UNSV, "MAJOR")
+}
+
+
+record(ai, "$(P):Curve:NumBreakpoints")
+{
+  field(DESC, "The number of breakpoints in the curve")
+}

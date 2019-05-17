@@ -2,7 +2,7 @@
 
 
 
-file callback.template
+file "lakeshore336App/Db/callback.template"
 {
 pattern { CHANNEL }
 	{1}
@@ -11,7 +11,7 @@ pattern { CHANNEL }
 	{4}
 }
 
-file lakeshore336.template
+file "lakeshore336App/Db/lakeshore336.template"
 {
 pattern {TEMPSCAN, SCAN}
 	{1, 5}
@@ -20,7 +20,7 @@ pattern {TEMPSCAN, SCAN}
 # OUTPUT and INPUT macro defined for both templates below as they are now linked
 # by the set unit function.  
 
-file lakeshore_input.template
+file "lakeshore336App/Db/lakeshore_input.template"
 {
 pattern {INPUT, INDEX, TEMPSCAN, SCAN, OUT}
 	{A, 0, 1, 5, 1}
@@ -29,7 +29,7 @@ pattern {INPUT, INDEX, TEMPSCAN, SCAN, OUT}
 	{D, 3, 1, 5, 4}
 }
 
-file lakeshore336output.template
+file "lakeshore336App/Db/lakeshore336output.template"
 {
 pattern {OUT, TEMPSCAN, SCAN, INPUT}
 	{1, 1, 5, A}
@@ -38,14 +38,14 @@ pattern {OUT, TEMPSCAN, SCAN, INPUT}
 	{4, 1, 5, D}
 }
 
-file lakeshore336loop.template
+file "lakeshore336App/Db/lakeshore336loop.template"
 {
 pattern {OUT, TEMPSCAN, SCAN}
 	{1, 1, 5}
 	{2, 1, 5}
 }
 
-file lakeshore336zone.template
+file "lakeshore336App/Db/lakeshore336zone.template"
 {
 pattern {OUT, ZONE, TEMPSCAN, SCAN}
 	{1, 1, 1, 5}
@@ -70,14 +70,14 @@ pattern {OUT, ZONE, TEMPSCAN, SCAN}
 	{2, 10, 1, 5}
 }
 
-file lakeshore336analog.template
+file "lakeshore336App/Db/lakeshore336analog.template"
 {
 pattern {OUT, TEMPSCAN, SCAN}
 	{3, 1, 5}
 	{4, 1, 5}
 }
 
-file lakeshore336zone_analog.template
+file "lakeshore336App/Db/lakeshore336zone_analog.template"
 {
 pattern {OUT, ZONE, TEMPSCAN, SCAN}
 	{3, 1, 1, 5}

@@ -1,0 +1,1 @@
+lakeshore336App/Db/lakeshore336_curvenames.db: lakeshore336App/Db/lakeshore336_curvenames.template

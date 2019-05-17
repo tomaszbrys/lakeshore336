@@ -1,0 +1,413 @@
+record(stringin, "$(P):Curve1:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(1) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve2:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(2) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve3:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(3) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve4:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(4) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve5:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(5) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve6:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(6) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve7:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(7) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve8:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(8) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve9:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(9) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve10:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(10) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve11:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(11) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve12:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(12) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve13:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(13) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve14:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(14) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve15:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(15) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve16:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(16) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve17:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(17) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve18:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(18) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve19:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(19) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve20:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(20) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve21:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(21) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve22:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(22) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve23:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(23) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve24:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(24) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve25:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(25) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve26:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(26) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve27:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(27) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve28:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(28) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve29:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(29) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve30:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(30) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve31:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(31) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve32:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(32) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve33:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(33) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve34:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(34) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve35:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(35) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve36:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(36) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve37:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(37) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve38:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(38) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve39:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(39) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve40:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(40) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve41:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(41) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve42:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(42) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve43:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(43) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve44:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(44) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve45:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(45) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve46:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(46) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve47:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(47) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve48:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(48) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve49:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(49) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve50:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(50) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve51:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(51) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve52:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(52) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve53:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(53) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve54:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(54) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve55:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(55) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve56:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(56) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve57:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(57) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve58:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(58) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+
+record(stringin, "$(P):Curve59:Name")
+{
+  field(DTYP, "stream")
+  field(INP,  "@curve.proto get_curve_name(59) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:iNameRead")
+}
+

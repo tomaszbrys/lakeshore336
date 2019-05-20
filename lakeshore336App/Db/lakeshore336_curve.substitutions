@@ -1,4 +1,4 @@
-file "lakeshore336App/Db/lakeshore336_curve.template"
+file "lakeshore336_curve.template"
 {
 	pattern { CurveType }
 

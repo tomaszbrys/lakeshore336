@@ -1,4 +1,4 @@
-file "lakeshore336App/Db/lakeshore336_curvenames.template"
+file "lakeshore336_curvenames.template"
 {
 	pattern { CurveIndex }
 

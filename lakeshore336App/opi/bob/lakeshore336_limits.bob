@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore limits</name>
+  <macros>
+    <PREFIX>ls1</PREFIX>
+  </macros>
+  <width>620</width>
+  <height>540</height>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>620</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore limits</text>
+    <x>20</x>
+    <width>260</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>recSubHeaderDown</name>
+    <x>9</x>
+    <y>70</y>
+    <width>600</width>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>recSubHeaderUp</name>
+    <x>9</x>
+    <y>60</y>
+    <width>600</width>
+    <height>30</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </background_color>
+    <corner_width>10</corner_width>
+    <corner_height>10</corner_height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>grpTitleLimits</name>
+    <text>Software limits</text>
+    <x>19</x>
+    <y>60</y>
+    <width>580</width>
+    <height>30</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpLimits</name>
+    <x>9</x>
+    <y>60</y>
+    <width>589</width>
+    <height>390</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>recLimits</name>
+      <y>30</y>
+      <width>600</width>
+      <height>360</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>43</y>
+      <width>579</width>
+      <height>335</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="2.0.0">
+        <name>grpChannels</name>
+        <y>26</y>
+        <width>30</width>
+        <height>309</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGA</name>
+          <text>A:</text>
+          <y>2</y>
+          <width>20</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGC5</name>
+          <text>C:</text>
+          <y>55</y>
+          <width>30</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGB</name>
+          <text>B:</text>
+          <y>27</y>
+          <width>20</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGD5</name>
+          <text>D:</text>
+          <y>80</y>
+          <width>30</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpTemperatures</name>
+        <x>30</x>
+        <width>99</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label</name>
+          <text>Temperature</text>
+          <width>90</width>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+            </color>
+          </foreground_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDG0</name>
+          <pv_name>$(PREFIX):KRDG0</pv_name>
+          <y>30</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDG2</name>
+          <pv_name>$(PREFIX):KRDG2</pv_name>
+          <y>80</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDG3</name>
+          <pv_name>$(PREFIX):KRDG3</pv_name>
+          <y>105</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDG1</name>
+          <pv_name>$(PREFIX):KRDG1</pv_name>
+          <y>55</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpLolo</name>
+        <x>139</x>
+        <width>90</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG3_LOLO</name>
+          <pv_name>$(PREFIX):KRDG3.LOLO</pv_name>
+          <y>105</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG2_LOLO</name>
+          <pv_name>$(PREFIX):KRDG2.LOLO</pv_name>
+          <y>80</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG1_LOLO</name>
+          <pv_name>$(PREFIX):KRDG1.LOLO</pv_name>
+          <y>52</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG0_LOLO</name>
+          <pv_name>$(PREFIX):KRDG0.LOLO</pv_name>
+          <y>28</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblLolo</name>
+          <text>LOLO</text>
+          <width>90</width>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+            </color>
+          </foreground_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpLow</name>
+        <x>240</x>
+        <width>93</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDGD3_LOW</name>
+          <pv_name>$(PREFIX):KRDG3.LOW</pv_name>
+          <y>105</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG2_LOW</name>
+          <pv_name>$(PREFIX):KRDG2.LOW</pv_name>
+          <y>80</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG1_LOW</name>
+          <pv_name>$(PREFIX):KRDG1.LOW</pv_name>
+          <y>52</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG0_LOW</name>
+          <pv_name>$(PREFIX):KRDG0.LOW</pv_name>
+          <y>28</y>
+          <width>90</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblLow</name>
+          <text>LOW</text>
+          <width>90</width>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+            </color>
+          </foreground_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpHigh</name>
+        <x>345</x>
+        <width>112</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG3_HIGH</name>
+          <pv_name>$(PREFIX):KRDG3.HIGH</pv_name>
+          <y>105</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG2_HIGH</name>
+          <pv_name>$(PREFIX):KRDG2.HIGH</pv_name>
+          <y>80</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG1_HIGH</name>
+          <pv_name>$(PREFIX):KRDG1.HIGH</pv_name>
+          <y>52</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG0_HIGH</name>
+          <pv_name>$(PREFIX):KRDG0.HIGH</pv_name>
+          <y>28</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblHigh</name>
+          <text>HIGH</text>
+          <width>112</width>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+            </color>
+          </foreground_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpHihi</name>
+        <x>468</x>
+        <width>112</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG3_HIHI</name>
+          <pv_name>$(PREFIX):KRDG3.HIHI</pv_name>
+          <y>105</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG2_HIHI</name>
+          <pv_name>$(PREFIX):KRDG2.HIHI</pv_name>
+          <y>80</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG1_HIHI</name>
+          <pv_name>$(PREFIX):KRDG1.HIHI</pv_name>
+          <y>52</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtKRDG0_HIHI</name>
+          <pv_name>$(PREFIX):KRDG0.HIHI</pv_name>
+          <y>28</y>
+          <width>112</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblHihi</name>
+          <text>HIHI</text>
+          <width>112</width>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+            </color>
+          </foreground_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpNote</name>
+    <x>9</x>
+    <y>459</y>
+    <width>600</width>
+    <height>68</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <width>600</width>
+      <height>68</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="255" blue="204">
+        </color>
+      </background_color>
+      <corner_width>15</corner_width>
+      <corner_height>15</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblNote</name>
+      <text>NOTE:   These are software limits  intended for EPICS alarm notification.
+                 They do NOT correspond to LakeShore alarm settings.</text>
+      <x>40</x>
+      <y>12</y>
+      <width>533</width>
+      <height>45</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <border_color>
+        <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+        </color>
+      </border_color>
+    </widget>
+  </widget>
+</display>

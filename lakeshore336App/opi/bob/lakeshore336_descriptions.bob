@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore descriptions</name>
+  <macros>
+    <PREFIX>ls1</PREFIX>
+  </macros>
+  <width>532</width>
+  <height>460</height>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>532</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore descriptions</text>
+    <x>20</x>
+    <width>260</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>recDescriptions</name>
+    <x>10</x>
+    <y>90</y>
+    <width>510</width>
+    <height>360</height>
+    <line_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </line_color>
+    <background_color>
+      <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>recSubHeaderDown</name>
+    <x>10</x>
+    <y>70</y>
+    <width>510</width>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>recSubHeaderUp</name>
+    <x>10</x>
+    <y>60</y>
+    <width>510</width>
+    <height>30</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color name="GROUP-BORDER" red="150" green="155" blue="151">
+      </color>
+    </background_color>
+    <corner_width>10</corner_width>
+    <corner_height>10</corner_height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>grpTitleDescription</name>
+    <text>Input sensor descriptions</text>
+    <x>20</x>
+    <y>60</y>
+    <width>488</width>
+    <height>30</height>
+    <font>
+      <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpDescription</name>
+    <x>10</x>
+    <y>60</y>
+    <width>510</width>
+    <height>390</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>Group</name>
+      <x>10</x>
+      <y>43</y>
+      <width>488</width>
+      <height>335</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="2.0.0">
+        <name>Group_0</name>
+        <y>26</y>
+        <width>30</width>
+        <height>309</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGA</name>
+          <text>A:</text>
+          <y>2</y>
+          <width>20</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGC</name>
+          <text>C:</text>
+          <y>55</y>
+          <width>30</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGB</name>
+          <text>B:</text>
+          <y>27</y>
+          <width>20</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblKRDGD</name>
+          <text>D:</text>
+          <y>79</y>
+          <width>30</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group_1</name>
+        <x>30</x>
+        <width>130</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label</name>
+          <text>Temperature</text>
+          <width>130</width>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <foreground_color>
+            <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+            </color>
+          </foreground_color>
+          <horizontal_alignment>1</horizontal_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDGA</name>
+          <pv_name>$(PREFIX):KRDG0</pv_name>
+          <y>30</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDGC</name>
+          <pv_name>$(PREFIX):KRDG2</pv_name>
+          <y>83</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDGB</name>
+          <pv_name>$(PREFIX):KRDG1</pv_name>
+          <y>55</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtKRDGD</name>
+          <pv_name>$(PREFIX):KRDG3</pv_name>
+          <y>105</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="BOLD" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <horizontal_alignment>2</horizontal_alignment>
+        </widget>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblDescription</name>
+        <text>Description</text>
+        <x>172</x>
+        <width>316</width>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </foreground_color>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group_2</name>
+        <x>172</x>
+        <width>128</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textentry" version="3.0.0">
+          <name>txtINNAME_S2</name>
+          <pv_name>$(PREFIX):INNAME_S2</pv_name>
+          <y>80</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtINNAME_S1</name>
+          <pv_name>$(PREFIX):INNAME_S1</pv_name>
+          <y>55</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtINNAME_S0</name>
+          <pv_name>$(PREFIX):INNAME_S0</pv_name>
+          <y>30</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>txtINNAME_S3</name>
+          <pv_name>$(PREFIX):INNAME_S3</pv_name>
+          <y>105</y>
+          <width>120</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <background_color>
+            <color name="BLUE" red="79" green="228" blue="250">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>Group_3</name>
+        <x>312</x>
+        <width>176</width>
+        <height>335</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtINNAME0</name>
+          <pv_name>$(PREFIX):INNAME0</pv_name>
+          <y>29</y>
+          <width>176</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtINNAME1</name>
+          <pv_name>$(PREFIX):INNAME1</pv_name>
+          <y>55</y>
+          <width>176</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtINNAME2</name>
+          <pv_name>$(PREFIX):INNAME2</pv_name>
+          <y>80</y>
+          <width>176</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>txtINNAME3</name>
+          <pv_name>$(PREFIX):INNAME3</pv_name>
+          <y>105</y>
+          <width>176</width>
+          <font>
+            <font family="FreeMono" style="REGULAR" size="14.0">
+            </font>
+          </font>
+          <transparent>true</transparent>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+</display>

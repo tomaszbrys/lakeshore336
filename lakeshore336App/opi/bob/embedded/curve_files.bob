@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_files</name>
+  <width>440</width>
+  <height>350</height>
+  <widget type="group" version="2.0.0">
+    <name>grpAvailableFiles</name>
+    <x>10</x>
+    <y>10</y>
+    <width>420</width>
+    <height>330</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_7</name>
+      <width>420</width>
+      <height>25</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_8</name>
+      <y>10</y>
+      <width>420</width>
+      <height>15</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpAvailableFilesTitle</name>
+      <text>Available calibration curve files</text>
+      <x>10</x>
+      <width>400</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <y>25</y>
+      <width>420</width>
+      <height>305</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtFilename</name>
+      <pv_name>$(PREFIX):CurveFile:Filename</pv_name>
+      <x>130</x>
+      <y>273</y>
+      <width>280</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblFilename</name>
+      <text>Selected file:</text>
+      <x>10</x>
+      <y>273</y>
+      <width>110</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>entPattern</name>
+      <pv_name>$(PREFIX):CurveFile:Pattern</pv_name>
+      <x>130</x>
+      <y>50</y>
+      <width>280</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <actions execute_as_one="true">
+      </actions>
+      <scripts>
+        <script file="EmbeddedPy" check_connections="false">
+          <text><![CDATA[# -----------------------------------------------------------------------------
+# Jython - CSStudio
+# -----------------------------------------------------------------------------
+# LakeShore 336 - Temperature Monitoring
+# -----------------------------------------------------------------------------
+# ESS ERIC - ICS HWI group
+# -----------------------------------------------------------------------------
+# WP12 - douglas.bezerra.beniz@esss.se
+# -----------------------------------------------------------------------------
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+from time import sleep
+
+# -----------------------------------------------------------------------------
+# class objects
+# -----------------------------------------------------------------------------
+logger = ScriptUtil.getLogger()
+#logger.info("starting...")
+# -----------------------------------------------------------------------------
+# procedures
+# -----------------------------------------------------------------------------
+def mainProcedure():
+    # debug purpose only
+    #logger.info("file_idx: %d" % int(file_idx))
+    # forcing a 'reload' of the embedded widget... yes, I know...
+    display    = widget.getDisplayModel()
+    embFileMatches = display.runtimeChildren().getChildByName("embFileMatches")
+    embFileMatches.setPropertyValue("file", "")
+    embFileMatches.setPropertyValue("file", "curve_matches.bob")
+    sleep(0.2)
+    # pvs[1]: loc://generateFileMatchesEntries
+    # force list of files to be reloaded...
+    pvs[1].setValue(1)
+
+# -----------------------------------------------------------------------------
+# calling the main procedure
+# -----------------------------------------------------------------------------
+# pvs[1]: loc://generateFileMatchesEntries
+trigger = PVUtil.getInt(pvs[1])
+if not trigger:
+    sleep(0.2)              # this was necessary because more than one procedure were being started, probably due to the period of scan of CSStudio thread
+    mainProcedure()]]></text>
+          <pv_name>$(PREFIX):CurveFile:Pattern</pv_name>
+          <pv_name trigger="false">loc://generateFileMatchesEntries(1)</pv_name>
+        </script>
+      </scripts>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblPattern</name>
+      <text>Pattern:</text>
+      <x>10</x>
+      <y>50</y>
+      <width>110</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>embFileMatches</name>
+      <file>curve_matches.bob</file>
+      <x>130</x>
+      <y>80</y>
+      <width>280</width>
+      <height>180</height>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <x>160</x>
+    <y>410</y>
+    <width>0</width>
+    <height>0</height>
+  </widget>
+</display>

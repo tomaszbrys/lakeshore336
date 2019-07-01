@@ -68,10 +68,22 @@ getKRDG {
    in "%f";
 }
 
+# /// Read the temperature in celcius degree for inputs 1-4
+getCRDG {
+   out "CRDG? \$1";
+   in "%f";
+}
+
 # /// Read the voltage input for inputs 1-4
 getSRDG {
    out "SRDG? \$1";
    in "%f";
+}
+
+# /// REad the status query
+getRDGST {
+   out "RDGST? \$1";
+   in "%d";
 }
 
 # /// Read the range parameter (power range) for outputs 1-4

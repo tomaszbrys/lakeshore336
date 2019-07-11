@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore EPICS</name>
+  <macros>
+    <P>$(PREFIX):</P>
+    <R>ASYN</R>
+  </macros>
+  <width>620</width>
+  <height>250</height>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>620</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore EPICS</text>
+    <x>20</x>
+    <width>260</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpEPICS</name>
+    <x>10</x>
+    <y>60</y>
+    <width>600</width>
+    <height>180</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>recTitleUp</name>
+      <width>600</width>
+      <height>25</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>recTitleDown</name>
+      <y>10</y>
+      <width>600</width>
+      <height>15</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpEPICSTitle</name>
+      <text>EPICS software control</text>
+      <x>10</x>
+      <width>580</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>recEPICS</name>
+      <y>25</y>
+      <width>600</width>
+      <height>155</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblDisable</name>
+      <text>This enables or disables setting parameter. The read-onlly PVs are still updated.</text>
+      <x>158</x>
+      <y>40</y>
+      <width>432</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>cboDisable</name>
+      <pv_name>$(PREFIX):DISABLE</pv_name>
+      <x>10</x>
+      <y>40</y>
+      <width>132</width>
+      <height>20</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butAsyn</name>
+      <actions>
+        <action type="open_display">
+          <file>../ess-opi-asyn/asynRecord.bob</file>
+          <target>replace</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Asyn record</text>
+      <x>10</x>
+      <y>138</y>
+      <width>132</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblDisablePoll</name>
+      <text>This enables or disables polling of read-only PVs.</text>
+      <x>158</x>
+      <y>72</y>
+      <width>432</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>cboDisablePoll</name>
+      <pv_name>$(PREFIX):DISABLE_POLL</pv_name>
+      <x>10</x>
+      <y>72</y>
+      <width>132</width>
+      <height>20</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblDisable3062</name>
+      <text>This enables or disables polling of the 3062 option card inputs.</text>
+      <x>158</x>
+      <y>103</y>
+      <width>432</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>cboDisable3062</name>
+      <pv_name>$(PREFIX):DISABLE_3062</pv_name>
+      <x>10</x>
+      <y>103</y>
+      <width>132</width>
+      <height>20</height>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblDisable_3</name>
+      <text>Asyn record for debugging (EPICS expert only)</text>
+      <x>158</x>
+      <y>138</y>
+      <width>432</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="14.0">
+        </font>
+      </font>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>

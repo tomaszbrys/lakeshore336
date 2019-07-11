@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_show</name>
+  <width>837</width>
+  <height>602</height>
+  <widget type="group" version="2.0.0">
+    <name>grpCurveWindow</name>
+    <x>10</x>
+    <y>10</y>
+    <width>817</width>
+    <height>462</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>grpInstalledCurves</name>
+      <width>360</width>
+      <height>462</height>
+      <style>3</style>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_7</name>
+        <width>360</width>
+        <height>25</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_8</name>
+        <y>10</y>
+        <width>360</width>
+        <height>15</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>grpSetCurveTitle</name>
+        <text>Installed calibration curves</text>
+        <x>10</x>
+        <width>340</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_9</name>
+        <y>25</y>
+        <width>360</width>
+        <height>437</height>
+        <line_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBThreshold1</name>
+        <text>Selected curve:</text>
+        <x>150</x>
+        <y>34</y>
+        <width>99</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCurveQuery</name>
+        <pv_name>$(PREFIX):Curve:Query</pv_name>
+        <x>259</x>
+        <y>35</y>
+        <width>90</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>embCurveNames</name>
+        <file>curve_names.bob</file>
+        <x>10</x>
+        <y>62</y>
+        <width>340</width>
+        <height>388</height>
+      </widget>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>embCurvesMetadata</name>
+      <file>curve_metadata.bob</file>
+      <macros>
+        <C>Curve</C>
+      </macros>
+      <x>397</x>
+      <y>130</y>
+      <width>420</width>
+      <height>332</height>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpSetCurve</name>
+      <x>397</x>
+      <width>420</width>
+      <height>110</height>
+      <style>3</style>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_10</name>
+        <width>420</width>
+        <height>25</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_11</name>
+        <y>10</y>
+        <width>420</width>
+        <height>15</height>
+        <line_width>0</line_width>
+        <background_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>grpSetCurveTitle</name>
+        <text>Set selected curve to channel</text>
+        <x>10</x>
+        <width>400</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="rectangle" version="2.0.0">
+        <name>Rectangle_12</name>
+        <y>25</y>
+        <width>420</width>
+        <height>85</height>
+        <line_color>
+          <color name="GROUP-BORDER" red="150" green="155" blue="151">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblChCrvNr</name>
+        <text>RBV</text>
+        <x>333</x>
+        <y>35</y>
+        <width>60</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtChCrvNr</name>
+        <pv_name>$(PREFIX):Ch:CrvNr</pv_name>
+        <x>333</x>
+        <y>60</y>
+        <width>60</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblChannel</name>
+        <text>Channel</text>
+        <x>181</x>
+        <y>59</y>
+        <width>60</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="combo" version="2.0.0">
+        <name>cboChannel</name>
+        <pv_name>$(PREFIX):ch</pv_name>
+        <x>251</x>
+        <y>59</y>
+        <width>52</width>
+        <height>20</height>
+        <items>
+          <item>A</item>
+          <item>B</item>
+          <item>C1</item>
+          <item>C2</item>
+          <item>C3</item>
+          <item>C4</item>
+          <item>C5</item>
+          <item>D1</item>
+          <item>D2</item>
+          <item>D3</item>
+          <item>D4</item>
+          <item>D5</item>
+        </items>
+        <items_from_pv>false</items_from_pv>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>butSetCurve</name>
+        <actions>
+          <action type="write_pv">
+            <pv_name>$(PREFIX):SetCrvToCh.PROC</pv_name>
+            <value>1</value>
+            <description>Write to SetCrvToCh.PROC PV</description>
+          </action>
+        </actions>
+        <text>Set selected curve</text>
+        <x>21</x>
+        <y>56</y>
+        <width>132</width>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="BLACK" red="0" green="0" blue="0">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color name="GRAY-BORDER" red="121" green="121" blue="121">
+          </color>
+        </background_color>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>Polyline</name>
+      <x>349</x>
+      <y>45</y>
+      <width>70</width>
+      <height>26</height>
+      <line_color>
+        <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+        </color>
+      </line_color>
+      <points>
+        <point x="0.0" y="0.0">
+        </point>
+        <point x="29.47916666666663" y="0.0">
+        </point>
+        <point x="29.479166666666686" y="26.000000000000014">
+        </point>
+        <point x="70.0" y="26.0">
+        </point>
+        <point x="70.0" y="26.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,16 @@
+# -----------------------------------------------------------------------------
+# Curve header processing (curves from 1..59)
+# -----------------------------------------------------------------------------
+record(scalcout, "$(P):Curve:DP$(DatapointIndex)") {
+  field(DTYP, "stream")
+  field(OUT,  "@curve.proto get_curve_datapoint_value($(P):Curve:DataPoint:Query, $(DatapointIndex)) $(ASYNPORT)")
+  field(FLNK, "$(P):Curve:DP$(DatapointIndex):iMetadata")
+  field(CALC, "1")
+}
+
+record(sseq, "$(P):Curve:DP$(DatapointIndex):iMetadata") {
+  field(DESC, "Distribute curve datapoint metadata")
+
+  field(DOL1, "$(DatapointIndex)")
+  field(LNK1, "$(P):Curve:DataPoint:iModifyValueLink.A PP MSS")
+}

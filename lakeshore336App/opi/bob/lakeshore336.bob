@@ -1,0 +1,1274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore</name>
+  <macros>
+    <IPADDR>10.0.7.141</IPADDR>
+    <PREFIX>UTG-SEE-TEFI:Tctrl-LS336-002</PREFIX>
+  </macros>
+  <width>1400</width>
+  <height>780</height>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>1400</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore 336</text>
+    <x>20</x>
+    <width>150</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpDatails</name>
+    <x>968</x>
+    <y>24</y>
+    <width>420</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>lblModel</name>
+      <text>Model:</text>
+      <width>40</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtModel</name>
+      <pv_name>$(PREFIX):MODEL</pv_name>
+      <x>40</x>
+      <width>60</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblSerial</name>
+      <text>Serial:</text>
+      <x>108</x>
+      <width>36</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtSerial</name>
+      <pv_name>$(PREFIX):SERIAL</pv_name>
+      <x>152</x>
+      <width>98</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblFirmware</name>
+      <text>Firmware version:</text>
+      <x>260</x>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="12.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtFirmware</name>
+      <pv_name>$(PREFIX):FIRMWARE</pv_name>
+      <x>370</x>
+      <width>50</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="12.0">
+        </font>
+      </font>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>BGGrey02</name>
+    <x>520</x>
+    <y>70</y>
+    <width>860</width>
+    <height>690</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-background</name>
+      <y>30</y>
+      <width>860</width>
+      <height>660</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-titlebar</name>
+      <width>860</width>
+      <height>690</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>BGGrey02-title</name>
+      <text>Graph</text>
+      <width>860</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="databrowser" version="2.0.0">
+      <name>Data Browser</name>
+      <file>graphs/plotXY.plt</file>
+      <x>10</x>
+      <y>30</y>
+      <width>840</width>
+      <height>650</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>BGGrey02_1</name>
+    <x>20</x>
+    <y>70</y>
+    <width>483</width>
+    <height>318</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-titlebar_1</name>
+      <width>483</width>
+      <height>59</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>BGGrey02-title_1</name>
+      <text>Monitor</text>
+      <width>483</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-background_1</name>
+      <y>30</y>
+      <width>483</width>
+      <height>288</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpTemperatures</name>
+      <x>112</x>
+      <y>79</y>
+      <width>120</width>
+      <height>235</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>lblTemperatures</name>
+        <text>Temperature[K]</text>
+        <width>120</width>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </foreground_color>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG0</name>
+        <pv_name>$(PREFIX):KRDG0
+</pv_name>
+        <y>30</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG2</name>
+        <pv_name>$(PREFIX):KRDG2</pv_name>
+        <y>80</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG3</name>
+        <pv_name>$(PREFIX):KRDG3</pv_name>
+        <y>105</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG1</name>
+        <pv_name>$(PREFIX):KRDG1</pv_name>
+        <y>55</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG4</name>
+        <pv_name>$(PREFIX):KRDG4
+
+
+</pv_name>
+        <y>140</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG5</name>
+        <pv_name>$(PREFIX):KRDG6</pv_name>
+        <y>190</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG6</name>
+        <pv_name>$(PREFIX):KRDG7
+
+</pv_name>
+        <y>215</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG7</name>
+        <pv_name>$(PREFIX):KRDG5
+</pv_name>
+        <y>165</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpChannels</name>
+      <x>20</x>
+      <y>79</y>
+      <width>92</width>
+      <height>235</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGA</name>
+        <text>A:</text>
+        <y>30</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGC</name>
+        <text>C:</text>
+        <y>80</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGB</name>
+        <text>B:</text>
+        <y>55</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGD</name>
+        <text>D:</text>
+        <y>105</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGA_1</name>
+        <text>D1:</text>
+        <y>140</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGC_1</name>
+        <text>D3:</text>
+        <y>190</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGB_1</name>
+        <text>D2:</text>
+        <y>165</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblKRDGD_1</name>
+        <text>D4:</text>
+        <y>215</y>
+        <width>80</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>2</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpTemperatures_1</name>
+      <x>232</x>
+      <y>79</y>
+      <width>120</width>
+      <height>235</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>lblTemperatures_2</name>
+        <text>Sensor Units</text>
+        <width>120</width>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </foreground_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG0_1</name>
+        <pv_name>$(PREFIX):SRDG0</pv_name>
+        <y>30</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG2_1</name>
+        <pv_name>$(PREFIX):SRDG2</pv_name>
+        <y>80</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG3_1</name>
+        <pv_name>$(PREFIX):SRDG3</pv_name>
+        <y>105</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG1_1</name>
+        <pv_name>$(PREFIX):SRDG1</pv_name>
+        <y>55</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG0_4</name>
+        <pv_name>$(PREFIX):SRDG4</pv_name>
+        <y>140</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG2_4</name>
+        <pv_name>$(PREFIX):SRDG6</pv_name>
+        <y>190</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG3_4</name>
+        <pv_name>$(PREFIX):SRDG7</pv_name>
+        <y>215</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtKRDG1_4</name>
+        <pv_name>$(PREFIX):SRDG5</pv_name>
+        <y>165</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>2</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>Set Points</name>
+      <x>352</x>
+      <y>79</y>
+      <width>120</width>
+      <height>235</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="label" version="2.0.0">
+        <name>lblTemperatures_1</name>
+        <text>Set Points</text>
+        <width>120</width>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </foreground_color>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtSETP1</name>
+        <pv_name>$(PREFIX):SETP1
+</pv_name>
+        <y>30</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtSETP2</name>
+        <pv_name>$(PREFIX):SETP3</pv_name>
+        <y>80</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtSETP3</name>
+        <pv_name>$(PREFIX):SETP4</pv_name>
+        <y>105</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtSETP4</name>
+        <pv_name>$(PREFIX):SETP2</pv_name>
+        <y>55</y>
+        <width>110</width>
+        <font>
+          <font family="FreeMono" style="BOLD" size="14.0">
+          </font>
+        </font>
+        <transparent>true</transparent>
+        <precision>3</precision>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>Action Button</name>
+      <actions>
+        <action type="execute">
+          <script file="EmbeddedPy">
+            <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+print 'Hello'
+# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
+          </script>
+          <description>Kelvin</description>
+        </action>
+        <action type="execute">
+          <script file="EmbeddedPy">
+            <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+print 'Hello'
+# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
+          </script>
+          <description>Celcius</description>
+        </action>
+      </actions>
+      <x>186</x>
+      <y>42</y>
+      <height>20</height>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblTemperatures_3</name>
+      <text>Temperature Units</text>
+      <x>20</x>
+      <y>42</y>
+      <width>166</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+        </color>
+      </foreground_color>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>BGGrey02_2</name>
+    <x>20</x>
+    <y>400</y>
+    <width>483</width>
+    <height>210</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-titlebar_2</name>
+      <width>483</width>
+      <height>59</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>BGGrey02-title_2</name>
+      <text>Control</text>
+      <width>483</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-background_2</name>
+      <y>30</y>
+      <width>483</width>
+      <height>180</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butDescriptions_1</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_analog.bob</file>
+          <macros>
+            <OUT>1</OUT>
+          </macros>
+          <target>standalone</target>
+          <description>Open 336 Descriptions</description>
+        </action>
+      </actions>
+      <text>Output 1</text>
+      <x>20</x>
+      <y>48</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butDescriptions_2</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_analog.bob</file>
+          <macros>
+            <OUT>2</OUT>
+          </macros>
+          <target>standalone</target>
+          <description>Open 336 Descriptions</description>
+        </action>
+      </actions>
+      <text>Output 2</text>
+      <x>20</x>
+      <y>88</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butDescriptions_3</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_analog.bob</file>
+          <macros>
+            <OUT>3</OUT>
+          </macros>
+          <target>standalone</target>
+          <description>Open 336 Descriptions</description>
+        </action>
+      </actions>
+      <text>Analog Out 3</text>
+      <x>20</x>
+      <y>128</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butDescriptions_4</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_analog.bob</file>
+          <macros>
+            <OUT>4</OUT>
+          </macros>
+          <target>standalone</target>
+          <description>Open 336 Descriptions</description>
+        </action>
+      </actions>
+      <text>Analog Out 4</text>
+      <x>20</x>
+      <y>168</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpRelaysGroup</name>
+      <x>176</x>
+      <y>48</y>
+      <width>282</width>
+      <height>152</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>recBorderRelays</name>
+        <width>282</width>
+        <height>152</height>
+        <line_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpRelays</name>
+        <x>10</x>
+        <y>13</y>
+        <width>260</width>
+        <height>128</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="rectangle" version="2.0.0">
+          <name>recBorderRelay2</name>
+          <y>78</y>
+          <width>260</width>
+          <height>50</height>
+          <line_color>
+            <color name="BLACK-BORDER" red="121" green="121" blue="121">
+            </color>
+          </line_color>
+          <background_color>
+            <color name="BACKGROUND" red="220" green="225" blue="221">
+            </color>
+          </background_color>
+          <transparent>true</transparent>
+          <corner_width>10</corner_width>
+          <corner_height>10</corner_height>
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>recBorderRelay1</name>
+          <y>24</y>
+          <width>260</width>
+          <height>50</height>
+          <line_color>
+            <color name="BLACK-BORDER" red="121" green="121" blue="121">
+            </color>
+          </line_color>
+          <background_color>
+            <color name="BACKGROUND" red="220" green="225" blue="221">
+            </color>
+          </background_color>
+          <transparent>true</transparent>
+          <corner_width>10</corner_width>
+          <corner_height>10</corner_height>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>ledRelay1State</name>
+          <pv_name>$(PREFIX):RELAYST1</pv_name>
+          <x>220</x>
+          <y>39</y>
+        </widget>
+        <widget type="led" version="2.0.0">
+          <name>ledRelay2State</name>
+          <pv_name>$(PREFIX):RELAYST2</pv_name>
+          <x>220</x>
+          <y>93</y>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>boolButRelay1</name>
+          <pv_name>$(PREFIX):RELAY1</pv_name>
+          <x>100</x>
+          <y>34</y>
+        </widget>
+        <widget type="bool_button" version="2.0.0">
+          <name>boolButRelay2</name>
+          <pv_name>$(PREFIX):RELAY2</pv_name>
+          <x>100</x>
+          <y>88</y>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblRelay1</name>
+          <text>Relay 1</text>
+          <x>10</x>
+          <y>37</y>
+          <width>78</width>
+          <height>28</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblRelay2</name>
+          <text>Relay 2</text>
+          <x>10</x>
+          <y>91</y>
+          <width>78</width>
+          <height>28</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblRelayRBV</name>
+          <text>Relays</text>
+          <x>10</x>
+          <height>28</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>lblRelayRBV_1</name>
+          <text>RBV</text>
+          <x>200</x>
+          <width>40</width>
+          <height>28</height>
+          <font>
+            <font family="Source Sans Pro" style="BOLD" size="16.0">
+            </font>
+          </font>
+          <horizontal_alignment>2</horizontal_alignment>
+        </widget>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>BGGrey02_3</name>
+    <x>20</x>
+    <y>624</y>
+    <width>483</width>
+    <height>136</height>
+    <style>3</style>
+    <background_color>
+      <color name="BACKGROUND" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-titlebar_3</name>
+      <width>483</width>
+      <height>59</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>BGGrey02-title_3</name>
+      <text>Settings</text>
+      <width>483</width>
+      <height>30</height>
+      <font>
+        <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>BGGrey02-background_3</name>
+      <y>30</y>
+      <width>483</width>
+      <height>106</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butOpen336Display</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_display.bob</file>
+          <target>standalone</target>
+          <description>Open 336 Display</description>
+        </action>
+      </actions>
+      <text>Display </text>
+      <x>20</x>
+      <y>44</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butCurves</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_curves.bob</file>
+          <target>standalone</target>
+          <description>Open 336 Curves</description>
+        </action>
+      </actions>
+      <text>Curves</text>
+      <x>180</x>
+      <y>44</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="18.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butDescriptions</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_descriptions.bob</file>
+          <target>standalone</target>
+          <description>Open 336 Descriptions</description>
+        </action>
+      </actions>
+      <text>Descriptions</text>
+      <x>20</x>
+      <y>88</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butXYPlot</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_xyPlot.bob</file>
+          <target>standalone</target>
+          <description>Open 336 XYPlot</description>
+        </action>
+      </actions>
+      <text>Plot</text>
+      <x>180</x>
+      <y>88</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butLimits</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_limits.bob</file>
+          <target>standalone</target>
+          <description>Open 336 Limits</description>
+        </action>
+      </actions>
+      <text>Limits</text>
+      <x>340</x>
+      <y>44</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butEPICS</name>
+      <actions>
+        <action type="open_display">
+          <file>lakeshore336_epics.bob</file>
+          <target>standalone</target>
+          <description>Open 336 EPICS</description>
+        </action>
+      </actions>
+      <text>EPICS</text>
+      <x>340</x>
+      <y>88</y>
+      <width>120</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title_1</name>
+    <class>HEADER3</class>
+    <text>$(PREFIX) $(IPADDR)</text>
+    <x>306</x>
+    <y>12</y>
+    <width>422</width>
+    <height>26</height>
+    <font use_class="true">
+      <font name="Header 3" family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+</display>

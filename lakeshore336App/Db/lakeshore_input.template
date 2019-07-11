@@ -82,11 +82,37 @@ record(ai, "$(P):SRDG$(INDEX)") {
 ##
 ## Read the raw voltage on channel $(INDEX).
 ##
+##  record(mbbi, "$(P):RDGST$(INDEX)") {
+##    field(DTYP, "stream")
+##    field(INP,  "@lakeshore336.proto getRDGST($(INPUT)) $(PORT) $(ADDR)")
+##    field(MASK, 1)
+##    field(ZRST, "0")
+##    field(ONST, "invalid reading")
+##    field(TWST, "temp underrange")
+##    field(THST, "temp overrange")
+##    field(FRST, "sensor unit zero")
+##    field(FVST, "sensor unit overrange")
+##    field(ZRVL,   0)
+##    field(ONVL,   1)
+##    field(TWVL,  16)
+##    field(THVL,  32)
+##    field(FRVL,  64)
+##    field(FVVL, 128)
+##  }
 
-record(ai, "$(P):RDGST$(INDEX)") {
+ record(ai, "$(P):RDGST$(INDEX)") {
+  field(DESC, "Status Query, checks if there is error")
   field(DTYP, "stream")
-  field(INP, "@lakeshore336.proto getRDGST($(INPUT)) $(PORT) $(ADDR)")
+  field(INP,  "@lakeshore336.proto getRDGST($(INPUT)) $(PORT) $(ADDR)")
 }
+
+ record(stringin, "$(P):RDGST_ERR") {
+  field(DESC, "Status Query, error description")
+  field(DTYP, "Soft Channel")
+  field(VAL,  "Invalid readout")
+}
+
+
 ##
 ## Set sensor $(INDEX) name
 ##

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_install</name>
+  <width>440</width>
+  <height>602</height>
+  <widget type="group" version="2.0.0">
+    <name>grpCalibCurveFile</name>
+    <x>10</x>
+    <y>10</y>
+    <width>420</width>
+    <height>100</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_10</name>
+      <width>420</width>
+      <height>25</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_11</name>
+      <y>10</y>
+      <width>420</width>
+      <height>15</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpCalibCurveFileTitle</name>
+      <text>Calibration curve file</text>
+      <x>10</x>
+      <width>400</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_12</name>
+      <y>25</y>
+      <width>420</width>
+      <height>75</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblFileType</name>
+      <text>File type:</text>
+      <x>20</x>
+      <y>66</y>
+      <width>89</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>cboCurveFileType</name>
+      <pv_name>$(PREFIX):CurveFile:Type</pv_name>
+      <x>120</x>
+      <y>66</y>
+      <width>110</width>
+      <height>20</height>
+      <items>
+        <item>Item 0</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+        <item>Item 4</item>
+        <item>Item 5</item>
+        <item>Item 6</item>
+        <item>Item 7</item>
+        <item>Item 8</item>
+        <item>Item 9</item>
+        <item>Item 10</item>
+        <item>Item 11</item>
+        <item>Item 12</item>
+      </items>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butCurveFileParse</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>Write to CurveFile:Parse</description>
+        </action>
+      </actions>
+      <pv_name>$(PREFIX):CurveFile:Parse</pv_name>
+      <text>Read file</text>
+      <x>252</x>
+      <y>64</y>
+      <height>28</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>entCurveFileName</name>
+      <pv_name>$(PREFIX):CurveFile:Filename</pv_name>
+      <x>120</x>
+      <y>35</y>
+      <width>273</width>
+      <height>22</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblCurveFileName</name>
+      <text>File name:</text>
+      <x>20</x>
+      <y>35</y>
+      <width>89</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ledCurveFileParseStatus</name>
+      <pv_name>$(PREFIX):CurveFile:ParseStatus</pv_name>
+      <x>370</x>
+      <y>66</y>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embCurveInstall</name>
+    <file>curve_data.bob</file>
+    <macros>
+      <C>CurveFile</C>
+    </macros>
+    <x>10</x>
+    <y>116</y>
+    <width>420</width>
+    <height>400</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpCalibCurveInstall</name>
+    <x>10</x>
+    <y>523</y>
+    <width>420</width>
+    <height>71</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_13</name>
+      <width>420</width>
+      <height>25</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_14</name>
+      <y>10</y>
+      <width>420</width>
+      <height>15</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpCalibCurveInstallTitle</name>
+      <text>Calibration curve install</text>
+      <x>10</x>
+      <width>400</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_15</name>
+      <y>25</y>
+      <width>420</width>
+      <height>46</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblCurveFileInstallEntry</name>
+      <text>Curve entry:</text>
+      <x>20</x>
+      <y>37</y>
+      <width>89</width>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butInstallCurve</name>
+      <actions>
+        <action type="write_pv">
+          <pv_name>$(pv_name)</pv_name>
+          <value>1</value>
+          <description>Write to CurveFile:Install PV</description>
+        </action>
+      </actions>
+      <pv_name>$(PREFIX):CurveFile:Install</pv_name>
+      <text>Install curve</text>
+      <x>252</x>
+      <y>35</y>
+      <height>28</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK" red="0" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="GRAY-BORDER" red="121" green="121" blue="121">
+        </color>
+      </background_color>
+      <tooltip>$(actions)</tooltip>
+    </widget>
+    <widget type="led" version="2.0.0">
+      <name>ledCurveFileInstallStatus</name>
+      <pv_name>$(PREFIX):CurveFile:InstallStatus</pv_name>
+      <x>370</x>
+      <y>37</y>
+    </widget>
+    <widget type="spinner" version="2.0.0">
+      <name>spnCurveFileInstallEntry</name>
+      <pv_name>$(PREFIX):CurveFile:InstallEntry</pv_name>
+      <x>120</x>
+      <y>37</y>
+      <width>110</width>
+      <height>22</height>
+    </widget>
+  </widget>
+</display>

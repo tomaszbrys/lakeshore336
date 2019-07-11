@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore callback</name>
+  <macros>
+    <PREFIX>SES-FLUC:Tmonit-LS336-001</PREFIX>
+  </macros>
+  <width>560</width>
+  <height>416</height>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>560</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore callback</text>
+    <x>20</x>
+    <width>236</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpCallback</name>
+    <x>10</x>
+    <y>62</y>
+    <width>540</width>
+    <height>342</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_7</name>
+      <width>540</width>
+      <height>30</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_8</name>
+      <y>10</y>
+      <width>540</width>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpCallbackTitle</name>
+      <text>Callback</text>
+      <x>10</x>
+      <width>520</width>
+      <height>30</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <y>30</y>
+      <width>540</width>
+      <height>312</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpCallback1</name>
+      <x>10</x>
+      <y>41</y>
+      <width>520</width>
+      <height>66</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>recBorderCallback1</name>
+        <width>520</width>
+        <height>66</height>
+        <line_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBThreshold1</name>
+        <text>Threshold-1 (K)</text>
+        <x>12</x>
+        <y>11</y>
+        <width>104</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCB1</name>
+        <pv_name>$(PREFIX):CB1</pv_name>
+        <x>478</x>
+        <y>12</y>
+        <width>18</width>
+        <height>18</height>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBThreshold1</name>
+        <pv_name>$(PREFIX):CBthres1</pv_name>
+        <x>118</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t1</name>
+        <text>SettlingTime-1 (s)</text>
+        <x>198</x>
+        <y>11</y>
+        <width>111</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBsettl_t1</name>
+        <pv_name>$(PREFIX):CBsettl_t1</pv_name>
+        <x>319</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCB1</name>
+        <text>Ready-1</text>
+        <x>404</x>
+        <y>11</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBerr1</name>
+        <text>Timeout-1</text>
+        <x>404</x>
+        <y>36</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCBerr1</name>
+        <pv_name>$(PREFIX):CBerr1</pv_name>
+        <x>478</x>
+        <y>37</y>
+        <width>18</width>
+        <height>18</height>
+        <on_color>
+          <color name="ATTENTION" red="252" green="242" blue="17">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t1</name>
+        <text>Timeout-1 (s)</text>
+        <x>198</x>
+        <y>35</y>
+        <width>108</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBtout1</name>
+        <pv_name>$(PREFIX):CBtout1</pv_name>
+        <x>319</x>
+        <y>35</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpCallback2</name>
+      <x>10</x>
+      <y>115</y>
+      <width>520</width>
+      <height>66</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>recBorderCallback2</name>
+        <width>520</width>
+        <height>66</height>
+        <line_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBThreshold2</name>
+        <text>Threshold-2 (K)</text>
+        <x>12</x>
+        <y>11</y>
+        <width>104</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCB2</name>
+        <pv_name>$(PREFIX):CB2</pv_name>
+        <x>478</x>
+        <y>12</y>
+        <width>18</width>
+        <height>18</height>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBThreshold2</name>
+        <pv_name>$(PREFIX):CBthres2</pv_name>
+        <x>118</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t2</name>
+        <text>SettlingTime-2 (s)</text>
+        <x>198</x>
+        <y>11</y>
+        <width>111</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBsettl_t2</name>
+        <pv_name>$(PREFIX):CBsettl_t2</pv_name>
+        <x>319</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCB2</name>
+        <text>Ready-2</text>
+        <x>404</x>
+        <y>11</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBerr2</name>
+        <text>Timeout-2</text>
+        <x>404</x>
+        <y>36</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCBerr2</name>
+        <pv_name>$(PREFIX):CBerr2</pv_name>
+        <x>478</x>
+        <y>37</y>
+        <width>18</width>
+        <height>18</height>
+        <on_color>
+          <color name="ATTENTION" red="252" green="242" blue="17">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t2</name>
+        <text>Timeout-2 (s)</text>
+        <x>198</x>
+        <y>35</y>
+        <width>108</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBtout2</name>
+        <pv_name>$(PREFIX):CBtout2</pv_name>
+        <x>319</x>
+        <y>35</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpCallback3</name>
+      <x>10</x>
+      <y>190</y>
+      <width>520</width>
+      <height>66</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>recBorderCallback3</name>
+        <width>520</width>
+        <height>66</height>
+        <line_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBThreshold3</name>
+        <text>Threshold-3 (K)</text>
+        <x>12</x>
+        <y>11</y>
+        <width>104</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCB3</name>
+        <pv_name>$(PREFIX):CB3</pv_name>
+        <x>478</x>
+        <y>12</y>
+        <width>18</width>
+        <height>18</height>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBThreshold3</name>
+        <pv_name>$(PREFIX):CBthres3</pv_name>
+        <x>118</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t3</name>
+        <text>SettlingTime-3 (s)</text>
+        <x>198</x>
+        <y>11</y>
+        <width>111</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBsettl_t3</name>
+        <pv_name>$(PREFIX):CBsettl_t3</pv_name>
+        <x>319</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCB3</name>
+        <text>Ready-3</text>
+        <x>404</x>
+        <y>11</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBerr3</name>
+        <text>Timeout-3</text>
+        <x>404</x>
+        <y>36</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCBerr3</name>
+        <pv_name>$(PREFIX):CBerr3</pv_name>
+        <x>478</x>
+        <y>37</y>
+        <width>18</width>
+        <height>18</height>
+        <on_color>
+          <color name="ATTENTION" red="252" green="242" blue="17">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t3</name>
+        <text>Timeout-3 (s)</text>
+        <x>198</x>
+        <y>35</y>
+        <width>108</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBtout3</name>
+        <pv_name>$(PREFIX):CBtout3</pv_name>
+        <x>319</x>
+        <y>35</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>grpCallback4</name>
+      <x>10</x>
+      <y>265</y>
+      <width>520</width>
+      <height>66</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>recBorderCallback4</name>
+        <width>520</width>
+        <height>66</height>
+        <line_color>
+          <color name="PRIMARY-DARK" red="31" green="83" blue="102">
+          </color>
+        </line_color>
+        <background_color>
+          <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+          </color>
+        </background_color>
+        <corner_width>10</corner_width>
+        <corner_height>10</corner_height>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBThreshold4</name>
+        <text>Threshold-4 (K)</text>
+        <x>12</x>
+        <y>11</y>
+        <width>104</width>
+        <height>25</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCB4</name>
+        <pv_name>$(PREFIX):CB4</pv_name>
+        <x>476</x>
+        <y>12</y>
+        <width>18</width>
+        <height>18</height>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBThreshold4</name>
+        <pv_name>$(PREFIX):CBthres4</pv_name>
+        <x>118</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t4</name>
+        <text>SettlingTime-4 (s)</text>
+        <x>198</x>
+        <y>11</y>
+        <width>111</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBsettl_t4</name>
+        <pv_name>$(PREFIX):CBsettl_t4</pv_name>
+        <x>319</x>
+        <y>11</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCB4</name>
+        <text>Ready-4</text>
+        <x>404</x>
+        <y>11</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBerr4</name>
+        <text>Timeout-4</text>
+        <x>404</x>
+        <y>36</y>
+        <width>68</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="led" version="2.0.0">
+        <name>ledCBerr4</name>
+        <pv_name>$(PREFIX):CBerr4</pv_name>
+        <x>476</x>
+        <y>37</y>
+        <width>18</width>
+        <height>18</height>
+        <on_color>
+          <color name="ATTENTION" red="252" green="242" blue="17">
+          </color>
+        </on_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>lblCBsettl_t4</name>
+        <text>Timeout-4 (s)</text>
+        <x>198</x>
+        <y>35</y>
+        <width>108</width>
+        <height>22</height>
+        <font>
+          <font family="Source Sans Pro" style="BOLD" size="14.0">
+          </font>
+        </font>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>txtCBtout4</name>
+        <pv_name>$(PREFIX):CBtout4</pv_name>
+        <x>319</x>
+        <y>35</y>
+        <width>68</width>
+        <font>
+          <font family="Source Sans Pro" style="REGULAR" size="14.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+        <vertical_alignment>1</vertical_alignment>
+      </widget>
+    </widget>
+  </widget>
+</display>

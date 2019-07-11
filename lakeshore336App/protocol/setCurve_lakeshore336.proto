@@ -1,0 +1,55 @@
+##################################################
+#
+# Protocol File
+#
+# Protocol file for Lakeshore 224 channel to curve set feature
+# ESS 2017
+#
+# ESS
+# 
+##################################################
+
+
+##################################################
+# General Settings
+##################################################
+
+Terminator = "\r\n";
+ReplyTimeout = 1000;
+
+
+###################################################
+# Get functions
+###################################################
+# Read which curve nr is associated with a channel
+getCRV {
+   out "INCRV? \$1";
+   in "%d";
+}
+
+# Read function for the CSS .opi specific PVs
+# This uses a "selectable" channel
+getCRV2 {
+   out "INCRV? %(\$1.VAL)s";
+   in "%d";
+}
+
+#######################################################
+# Set functions
+#######################################################
+
+# Set selected curve nr for channel
+setCRV {
+   out "INCRV \$1,%d";
+}
+
+# /// Set the ramp parameter for loops 1-2
+#Set user selected curv NR to user selected channel
+#Function name short as record OUT field limited...
+C {
+   out "INCRV %(\$1.VAL)s,%(\$2.VAL)d";
+}
+
+
+
+

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_matches_template</name>
+  <width>260</width>
+  <height>20</height>
+  <widget type="action_button" version="3.0.0">
+    <name>actFileMatch$(FILE_IDX)</name>
+    <actions execute_as_one="true">
+      <action type="write_pv">
+        <pv_name>$(pv_name)</pv_name>
+        <value>1</value>
+        <description>Write PV</description>
+      </action>
+    </actions>
+    <pv_name>loc://FileMatch$(FILE_IDX)(0)</pv_name>
+    <text>$(pv_name)</text>
+    <width>260</width>
+    <height>20</height>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <background_color>
+      <color name="Read_Background" red="230" green="235" blue="232">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="updateText" prop_id="text" out_exp="true">
+        <exp bool_exp="pvs[0]">
+          <expression>PVUtil.getString(pvs[0])</expression>
+        </exp>
+        <pv_name>loc://FileMatchNames$(FILE_IDX)("")</pv_name>
+      </rule>
+    </rules>
+    <scripts>
+      <script file="EmbeddedPy" check_connections="false">
+        <text><![CDATA[# -----------------------------------------------------------------------------
+# Jython - CSStudio
+# -----------------------------------------------------------------------------
+# LakeShore 336 - Temperature Monitoring
+# -----------------------------------------------------------------------------
+# ESS ERIC - ICS HWI group
+# -----------------------------------------------------------------------------
+# WP12 - douglas.bezerra.beniz@esss.se
+# -----------------------------------------------------------------------------
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+from time import sleep
+
+# -----------------------------------------------------------------------------
+# class objects
+# -----------------------------------------------------------------------------
+logger = ScriptUtil.getLogger()
+#logger.info("starting...")
+# -----------------------------------------------------------------------------
+# procedures
+# -----------------------------------------------------------------------------
+def mainProcedure():
+    # get the value of trigger PV again, just for guarantee
+    trigger = PVUtil.getInt(pvs[0])
+    # only act, writing the new curve-query, if the trigger is '1'
+    if trigger:
+        display  = widget.getDisplayModel()
+        macros   = display.getEffectiveMacros()
+        file_idx = macros.getValue('FILE_IDX')
+        # debug purpose only
+        #logger.info("file_idx: %d" % int(file_idx))
+        # reseting the trigger value
+        pvs[0].setValue(0)
+        # get the value of fileNameMatch PV
+        fileName = PVUtil.getString(pvs[1])
+        #logger.info("fileName: %s" % str(fileName))
+        # pvs[2]: $(PREFIX):CurveFile:FileName
+        pvs[2].setValue(fileName)
+
+# -----------------------------------------------------------------------------
+# calling the main procedure
+# -----------------------------------------------------------------------------
+# get the value of trigger PV
+trigger = PVUtil.getInt(pvs[0])
+# only act, trying to write the new curve-query, if the trigger is '1'
+if trigger:
+    sleep(0.2)              # this was necessary because more than one procedure were being started, probably due to the period of scan of CSStudio thread
+    mainProcedure()]]></text>
+        <pv_name>loc://FileMatch$(FILE_IDX)(0)</pv_name>
+        <pv_name trigger="false">loc://FileMatchNames$(FILE_IDX)("")</pv_name>
+        <pv_name trigger="false">$(PREFIX):CurveFile:Filename</pv_name>
+      </script>
+    </scripts>
+    <tooltip>$(pv_name)</tooltip>
+  </widget>
+</display>

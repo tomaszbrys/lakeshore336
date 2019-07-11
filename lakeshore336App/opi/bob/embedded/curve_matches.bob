@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_matches</name>
+  <width>260</width>
+  <height>1000</height>
+  <scripts>
+    <script file="../scripts/generateFileMatchesEntries.py">
+      <pv_name>loc://generateFileMatchesEntries(1)</pv_name>
+      <pv_name>$(PREFIX):CurveFile:PatternMatches</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames1("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames2("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames3("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames4("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames5("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames6("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames7("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames8("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames9("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames10("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames11("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames12("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames13("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames14("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames15("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames16("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames17("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames18("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames19("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames20("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames21("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames22("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames23("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames24("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames25("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames26("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames27("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames28("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames29("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames30("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames31("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames32("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames33("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames34("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames35("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames36("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames37("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames38("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames39("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames40("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames41("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames42("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames43("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames44("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames45("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames46("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames47("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames48("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames49("")</pv_name>
+      <pv_name trigger="false">loc://FileMatchNames50("")</pv_name>
+    </script>
+  </scripts>
+</display>

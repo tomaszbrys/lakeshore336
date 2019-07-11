@@ -5,7 +5,7 @@
 InTerminator = CR LF;
 OutTerminator = LF;
 
-ReplyTimeout = 1000;
+ReplyTimeout = 200;
 
   
 #########################
@@ -34,11 +34,28 @@ get_curve_name {
 #############################
 get_curve_header {
   out "CRVHDR? %(A)d";
-  in  "%(AA)[^,],"   # Curve Name
-      "%(BB)[^,],"   # Curve Serial
-      "%(C)d,"       # Curve Format
-      "%(D)f,"       # Curve Limit
-      "%(E)d";       # Curve Coefficient
+  in  "%(AA)[^,],"   # Curve Name           (Curve:SensorModel)
+      "%(BB)[^,],"   # Curve Serial         (Curve:Serial)
+      "%(C)d,"       # Curve Format         (Curve:DataFormat)
+      "%(D)f,"       # Curve Limit          (Curve:SetpointLimit)
+      "%(E)d";       # Curve Coefficient    (Curve:TempCoeff)
+}
+
+
+
+#############################
+#
+# Get the metadata of a curve datapoint value
+#
+#  e.g. cmd: CRVPT? 1 200
+#
+#  Expects an scalcout PV
+#
+#############################
+get_curve_datapoint_value {
+  out "CRVPT? %(\${1}.VAL)d \${2}";
+  in  "%(A)f,"      # Volts
+      "%(B)f";      # Kelvin
 }
 
 
@@ -58,6 +75,7 @@ write_curve_header {
       "%(E)f,"       # Curve Limit
       "%(F)d";       # Curve Coefficient
 }
+
 
 
 ################################

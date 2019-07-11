@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore limits</name>
+  <width>490</width>
+  <height>560</height>
+  <actions execute_as_one="true">
+  </actions>
+  <scripts>
+    <script file="EmbeddedPy">
+      <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+
+#ScriptUtil.getLogger().info("Executing in display builder")
+# MACRO can be obtained from any widget
+value = widget.getEffectiveMacros().getValue("OUT")
+
+widget1 = ScriptUtil.findWidgetByName(widget, "grpTitleLimits")
+#PVpath = ScriptUtil.getPrimaryPV(WidgetPath)
+#path = PVUtil.getString(PVpath)
+
+widget2 = ScriptUtil.findWidgetByName(widget, "Label_12")
+widget3 = ScriptUtil.findWidgetByName(widget, "Text Update_25")
+
+#ScriptUtil.getLogger().info("value=" + value)
+
+
+if value == '1':
+    #ScriptUtil.getLogger().info("1: " + value)
+    widget1.setPropertyValue('text', "Software limits OUTPUT 1")
+    widget2.setPropertyValue('text', "Heater Output")
+    widget3.setPropertyValue('pv_name', "$(PREFIX):HTR$(OUT)")
+elif value == '2':
+    #ScriptUtil.getLogger().info("2: " + value)
+    widget1.setPropertyValue('text', "Software limits OUTPUT 2")
+    widget2.setPropertyValue('text', "Heater Output")
+    widget3.setPropertyValue('pv_name', "$(PREFIX):HTR$(OUT)")
+elif value == '3':
+    #ScriptUtil.getLogger().info("3: " + value)
+    widget1.setPropertyValue('text', "Software limits OUTPUT 3")
+    widget2.setPropertyValue('text', "Analog Output")
+    widget3.setPropertyValue('pv_name', "$(PREFIX):AOUT$(OUT)")
+elif value == '4':
+    #ScriptUtil.getLogger().info("4: " + value)
+    widget1.setPropertyValue('text', "Software limits OUTPUT 4")
+    widget2.setPropertyValue('text', "Analog Output")
+    widget3.setPropertyValue('pv_name', "$(PREFIX):AOUT$(OUT)")
+else:
+    widget1.setPropertyValue('text', "Software limits OUTPUT XXX")
+    widget2.setPropertyValue('text', "XXXXXXX")
+]]></text>
+      <pv_name>loc://triggerOPI</pv_name>
+    </script>
+  </scripts>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>480</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore analog outputs</text>
+    <x>20</x>
+    <width>260</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>Output</name>
+    <x>9</x>
+    <y>60</y>
+    <width>471</width>
+    <height>488</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>recLimits</name>
+      <y>30</y>
+      <width>471</width>
+      <height>458</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>GroupOutput</name>
+      <x>10</x>
+      <y>43</y>
+      <width>449</width>
+      <height>433</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="group" version="2.0.0">
+        <name>grpRBV</name>
+        <x>333</x>
+        <y>21</y>
+        <width>100</width>
+        <height>380</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_0</name>
+          <pv_name>$(PREFIX):SETP$(OUT)</pv_name>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_1</name>
+          <pv_name>$(PREFIX):RANGE$(OUT)</pv_name>
+          <y>30</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_2</name>
+          <pv_name>$(PREFIX):RAMP$(OUT)</pv_name>
+          <y>60</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_3</name>
+          <pv_name>$(PREFIX):RAMPST$(OUT)</pv_name>
+          <y>90</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_4</name>
+          <pv_name>$(PREFIX):MOUT$(OUT)</pv_name>
+          <y>120</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_5</name>
+          <pv_name>$(PREFIX):P$(OUT)</pv_name>
+          <y>150</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_6</name>
+          <pv_name>$(PREFIX):I$(OUT)</pv_name>
+          <y>180</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_7</name>
+          <pv_name>$(PREFIX):D$(OUT)</pv_name>
+          <y>210</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_8</name>
+          <pv_name>$(PREFIX):OMM$(OUT)</pv_name>
+          <y>240</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_9</name>
+          <pv_name>$(PREFIX):OMI$(OUT)</pv_name>
+          <y>270</y>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_10</name>
+          <pv_name>$(PREFIX):OMP$(OUT)</pv_name>
+          <y>300</y>
+        </widget>
+        <widget type="action_button" version="3.0.0">
+          <name>Text Update_11</name>
+          <actions>
+          </actions>
+          <y>330</y>
+          <height>20</height>
+          <background_color>
+            <color name="Read_Background" red="230" green="235" blue="232">
+            </color>
+          </background_color>
+          <tooltip></tooltip>
+        </widget>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_25</name>
+          <pv_name>$(PREFIX):AOUT$(OUT)</pv_name>
+          <y>360</y>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpSet</name>
+        <x>217</x>
+        <y>21</y>
+        <width>100</width>
+        <height>380</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="textupdate" version="2.0.0">
+          <name>Text Update_16</name>
+          <y>90</y>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Update_13</name>
+          <y>30</y>
+          <background_color>
+            <color name="Read_Background" red="230" green="235" blue="232">
+            </color>
+          </background_color>
+          <wrap_words>true</wrap_words>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry</name>
+          <pv_name>$(PREFIX):SETP_S$(OUT)</pv_name>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry_1</name>
+          <pv_name>$(PREFIX):RAMP_S$(OUT)</pv_name>
+          <y>60</y>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry_2</name>
+          <pv_name>$(PREFIX):MOUT_S$(OUT)</pv_name>
+          <y>120</y>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry_3</name>
+          <pv_name>$(PREFIX):P_S$(OUT)</pv_name>
+          <y>150</y>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry_4</name>
+          <pv_name>$(PREFIX):I_S$(OUT)</pv_name>
+          <y>180</y>
+        </widget>
+        <widget type="textentry" version="3.0.0">
+          <name>Text Entry_5</name>
+          <pv_name>$(PREFIX):D_S$(OUT)</pv_name>
+          <y>210</y>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Text Update_21</name>
+          <pv_name>$(PREFIX):OMM_S$(OUT)</pv_name>
+          <y>240</y>
+          <height>20</height>
+          <background_color>
+            <color name="Read_Background" red="230" green="235" blue="232">
+            </color>
+          </background_color>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Text Update_22</name>
+          <pv_name>$(PREFIX):OMI_S$(OUT)</pv_name>
+          <y>270</y>
+          <height>20</height>
+          <background_color>
+            <color name="Read_Background" red="230" green="235" blue="232">
+            </color>
+          </background_color>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Text Update_23</name>
+          <pv_name>$(PREFIX):OMP_S$(OUT)</pv_name>
+          <y>300</y>
+          <height>20</height>
+          <background_color>
+            <color name="Read_Background" red="230" green="235" blue="232">
+            </color>
+          </background_color>
+        </widget>
+        <widget type="combo" version="2.0.0">
+          <name>Text Update_24</name>
+          <pv_name>$(PREFIX):TUNEMODE_S$(OUT)</pv_name>
+          <y>330</y>
+          <height>20</height>
+          <background_color>
+            <color name="Read_Background" red="230" green="235" blue="232">
+            </color>
+          </background_color>
+        </widget>
+      </widget>
+      <widget type="group" version="2.0.0">
+        <name>grpDesc</name>
+        <y>21</y>
+        <width>204</width>
+        <height>412</height>
+        <style>3</style>
+        <transparent>true</transparent>
+        <widget type="label" version="2.0.0">
+          <name>Label_0</name>
+          <text>Set Point (SETP)</text>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_1</name>
+          <text>Range (RANGE)</text>
+          <y>30</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_2</name>
+          <text>Ramp Rate (RAMP)</text>
+          <y>60</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_3</name>
+          <text>Ramp Status (RAMP on/off)</text>
+          <y>90</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_4</name>
+          <text>Manual Output (MOUT)</text>
+          <y>120</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_5</name>
+          <text>P</text>
+          <y>150</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_6</name>
+          <text>I</text>
+          <y>180</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_7</name>
+          <text>D</text>
+          <y>210</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_8</name>
+          <text>Output mode</text>
+          <y>240</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_9</name>
+          <text>Control Input</text>
+          <y>270</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_10</name>
+          <text>Power Up Enable</text>
+          <y>300</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_11</name>
+          <text>Tuning Mode</text>
+          <y>330</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+        <widget type="label" version="2.0.0">
+          <name>Label_12</name>
+          <text>Analog Output</text>
+          <y>360</y>
+          <width>190</width>
+          <horizontal_alignment>2</horizontal_alignment>
+          <vertical_alignment>1</vertical_alignment>
+        </widget>
+      </widget>
+      <widget type="action_button" version="3.0.0">
+        <name>Action Button</name>
+        <actions>
+          <action type="open_display">
+            <file></file>
+            <target>replace</target>
+            <description>ZONE settings</description>
+          </action>
+        </actions>
+        <x>217</x>
+        <y>410</y>
+        <width>216</width>
+        <height>20</height>
+        <tooltip>$(actions)</tooltip>
+      </widget>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>recSubHeaderUp</name>
+      <width>471</width>
+      <height>30</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>recSubHeaderDown</name>
+      <y>10</y>
+      <width>471</width>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpTitleLimits</name>
+      <text>Software limits OUTPUT _</text>
+      <x>10</x>
+      <width>461</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+  </widget>
+</display>

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore display</name>
+  <width>600</width>
+  <height>320</height>
+  <widget type="picture" version="2.0.0">
+    <name>Picture</name>
+    <file>images/224_front-display.png</file>
+    <width>600</width>
+    <height>320</height>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rctDisplay</name>
+    <x>80</x>
+    <y>104</y>
+    <width>440</width>
+    <height>122</height>
+    <line_width>0</line_width>
+    <background_color>
+      <color red="69" green="93" blue="152">
+      </color>
+    </background_color>
+    <corner_width>5</corner_width>
+    <corner_height>5</corner_height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpTempColA</name>
+    <x>90</x>
+    <y>104</y>
+    <width>160</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtxRDGA</name>
+      <pv_name>$(PREFIX):KRDG0</pv_name>
+      <x>20</x>
+      <y>20</y>
+      <width>140</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="28.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblKRDG0</name>
+      <text>A:</text>
+      <width>20</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>innameA</name>
+      <pv_name>$(PREFIX):INNAME0</pv_name>
+      <x>20</x>
+      <width>140</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpTempColB</name>
+    <x>350</x>
+    <y>104</y>
+    <width>160</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtxRDGB</name>
+      <pv_name>$(PREFIX):KRDG1</pv_name>
+      <x>20</x>
+      <y>20</y>
+      <width>140</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="28.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblKRDGB</name>
+      <text>B:</text>
+      <width>20</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>innameB</name>
+      <pv_name>$(PREFIX):INNAME1</pv_name>
+      <x>20</x>
+      <width>140</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpTempColC</name>
+    <x>90</x>
+    <y>164</y>
+    <width>160</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtxRDGC</name>
+      <pv_name>$(PREFIX):KRDG2</pv_name>
+      <x>20</x>
+      <y>20</y>
+      <width>140</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="28.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblKRDGC</name>
+      <text>C:</text>
+      <width>20</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>innameC</name>
+      <pv_name>$(PREFIX):INNAME2</pv_name>
+      <x>20</x>
+      <width>140</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpTempColD</name>
+    <x>350</x>
+    <y>164</y>
+    <width>160</width>
+    <height>60</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>lblKRDGD</name>
+      <text>D:</text>
+      <width>20</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>innameD</name>
+      <pv_name>$(PREFIX):INNAME3</pv_name>
+      <x>20</x>
+      <width>140</width>
+      <font>
+        <font family="FreeMono" style="BOLD" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="BLACK-TEXT" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtxRDGD</name>
+      <pv_name>$(PREFIX):KRDG3</pv_name>
+      <x>20</x>
+      <y>20</y>
+      <width>140</width>
+      <height>30</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="28.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color name="WHITE" red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color name="BLUE-BACKGROUND" red="195" green="226" blue="225">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>cboSelectTempVolt</name>
+    <pv_name>loc://selectTempVolt&lt;VEnum&gt;(0, "Temperature (K)", "Temperature (C)", "Voltage")</pv_name>
+    <x>372</x>
+    <y>248</y>
+    <width>160</width>
+    <height>20</height>
+    <actions>
+    </actions>
+    <items>
+      <item>Temperature (K)</item>
+      <item>Temperature (C)</item>
+      <item>Voltage</item>
+    </items>
+    <items_from_pv>false</items_from_pv>
+  </widget>
+</display>

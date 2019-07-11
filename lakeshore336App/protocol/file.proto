@@ -1,0 +1,158 @@
+##################################################
+# General Settings
+##################################################
+
+
+ReplyTimeout = 1000;
+
+
+#####################################################
+#
+# Set the pattern to match filenames against
+#
+#  Expects stringout PV:
+#
+#   record(stringout, "Pattern")
+#   {
+#     field(DESC, "The pattern to match filenames against")
+#     field(DTYP, "stream")
+#     field(OUT,  "@file.proto set_pattern $(FILEPORT)")
+#   }
+#
+#####################################################
+set_pattern {
+  Terminator    = "";
+  InTerminator  = "";
+  OutTerminator = ETX;
+
+  out STX "%s";
+}
+
+
+#####################################################
+#
+# Get the filenames matching the pattern set with set_pattern
+# It uses a custom format converter, '%as' reads null-terminated
+# strings into an array
+#
+#  Expects a waveform PV with
+#   - FTVL set to STRING
+#   - SCAN set to I/O Intr
+#
+#   record(waveform, "PatternMatches")
+#   {
+#     field(DESC, "The array of filenames matching Pattern")
+#     field(DTYP, "stream")
+#     field(INP,  "@file.proto get_pattern_matches_iointr $(FILEPORT)")
+#     field(SCAN, "I/O Intr")
+#     field(FTVL, "STRING")
+#     field(NELM, "50")
+#   }
+#
+#####################################################
+get_pattern_matches_iointr {
+  # Do not poll for data
+  ReplyTimeout = 0;
+  InTerminator = ETX;
+
+  separator = NUL;
+  in "%s";
+}
+
+
+
+#####################################################
+#
+# Set the filename of the file you want to read
+#
+# PLEASE NOTE THAT THE ADDRESS IS SET TO 1
+#
+#  Expects a stringout PV
+#
+#   record(stringout, "SetFilename")
+#   {
+#     field(DESC, "Register filename")
+#     field(DTYP, "stream")
+#     field(OUT,  "@file.proto set_filename $(FILEPORT) 1")
+#   }
+#
+#####################################################
+set_filename {
+  Terminator    = "";
+  InTerminator  = "";
+  OutTerminator = "";
+
+  connect 1000;
+
+  out "%s";
+  in  "%=s";
+
+  disconnect;
+
+  @mismatch {
+    disconnect;
+  }
+}
+
+
+#############################################################
+##
+## The following is an example protocol to read and parse
+## a text file. It is taken from the m-epics-lakeshore336 module
+##
+## PLEASE NOTE THAT THE ADDRESS IS SET TO 2
+##
+## The driver itself _does not_ process terminators, so they have
+## to be set to "" to tell streamdevice not to expect any terminator
+## processing.
+## Before the first read a 'connect' command has to be issued
+## After the last read a 'disconnect' command has to be issued
+## The @mismatch handler has to be set up to do a disconnect
+##
+## The example reads in the whole file in one go, this module
+## was not tested with partial file reads!
+##
+############################################################
+##
+## Read and parse a ".340" format curve file
+##  (the filename should already be set with set_filename)
+##
+## PLEASE NOTE THAT THE ADDRESS IS SET TO 2
+##
+##  Expects an scalcout PV
+##
+##   record(scalcout, "$(P):CurveFile:i340Metadata")
+##   {
+##     field(DESC, "Parse curve metadata from .340 file")
+##     field(DTYP, "stream")
+##     field(OUT,  "@file.proto read_file($(P):CurveFile) $(FILEPORT) 2")
+##     field(FLNK, "$(P):CurveFile:i340Metadata-FO")
+##     field(CALC, "1")
+##   }
+##
+############################################################
+#read_file {
+#  Terminator    = "";
+#  InTerminator  = "";
+#  OutTerminator = "";
+#
+#  ExtraInput = ignore;
+#
+#  connect 1000;
+#
+#  in  "Sensor Model:\_"             "%(AA)15s"                     "%*[\r\n]"
+#      "Serial Number:\_"            "%(BB)10s"                     "%*[\r\n]"
+#      "Data Format:\_"              "%(C)i"     "%*[ ./()a-zA-Z]"  "%*[\r\n]"
+#      "SetPoint Limit:\_"           "%(D)f"     "%*[ ./()a-zA-Z]"  "%*[\r\n]"
+#      "Temperature coefficient:\_"  "%(E)i"     "%*[ ./()a-zA-Z]"  "%*[\r\n]"
+#      "Number of Breakpoints:\_"    "%(F)i"                        "%*[\r\n]"
+#                                                                   "%*[\r\n]"
+#      "%*[ ./()a-zA-Z]"                                            "%*[\r\n]"
+#      "%(\${1}:Breakpoints)f";
+#
+#  disconnect;
+#
+#  @mismatch {
+#    disconnect;
+#  }
+#}

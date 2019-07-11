@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_data</name>
+  <width>420</width>
+  <height>400</height>
+  <widget type="group" version="2.0.0">
+    <name>grpCalibration</name>
+    <width>420</width>
+    <height>400</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_7</name>
+      <width>420</width>
+      <height>25</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_8</name>
+      <y>10</y>
+      <width>420</width>
+      <height>15</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpCalibrationTitle</name>
+      <text>Calibration curve data</text>
+      <x>10</x>
+      <width>400</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD_ITALIC" size="18.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <y>25</y>
+      <width>420</width>
+      <height>375</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblSensorModel</name>
+      <text>Sensor model:</text>
+      <x>10</x>
+      <y>34</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtSensorModel</name>
+      <pv_name>$(PREFIX):$(C):SensorModel</pv_name>
+      <x>140</x>
+      <y>34</y>
+      <width>260</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblSerial</name>
+      <text>Serial number:</text>
+      <x>10</x>
+      <y>65</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtSerial</name>
+      <pv_name>$(PREFIX):$(C):Serial</pv_name>
+      <x>140</x>
+      <y>65</y>
+      <width>260</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblDataFormat</name>
+      <text>Data format:</text>
+      <x>10</x>
+      <y>96</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtDataFormat</name>
+      <pv_name>$(PREFIX):$(C):DataFormat</pv_name>
+      <x>140</x>
+      <y>96</y>
+      <width>260</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblSetpointLimit</name>
+      <text>Setpoint limit:</text>
+      <x>10</x>
+      <y>127</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtSetpointLimit</name>
+      <pv_name>$(PREFIX):$(C):SetpointLimit</pv_name>
+      <x>140</x>
+      <y>127</y>
+      <width>260</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblTempCoeff</name>
+      <text>Temp. coefficient:</text>
+      <x>10</x>
+      <y>158</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtTempCoeff</name>
+      <pv_name>$(PREFIX):$(C):TempCoeff</pv_name>
+      <x>140</x>
+      <y>158</y>
+      <width>260</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblNumBreakpoints</name>
+      <text>Num. breakpoints:</text>
+      <x>10</x>
+      <y>189</y>
+      <width>120</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>txtSensorModel_5</name>
+      <pv_name>$(PREFIX):$(C):NumBreakpoints</pv_name>
+      <x>140</x>
+      <y>189</y>
+      <width>260</width>
+      <font>
+        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="table" version="2.0.0">
+      <name>tab1</name>
+      <x>10</x>
+      <y>220</y>
+      <width>400</width>
+      <height>170</height>
+      <columns>
+        <column>
+          <name>Index</name>
+          <width>70</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Units</name>
+          <width>160</width>
+          <editable>false</editable>
+        </column>
+        <column>
+          <name>Temperature</name>
+          <width>150</width>
+          <editable>false</editable>
+        </column>
+      </columns>
+      <scripts>
+        <script file="EmbeddedPy">
+          <text><![CDATA[# -----------------------------------------------------------------------------
+# Jython/Embedded - CSStudio
+# -----------------------------------------------------------------------------
+# LakeShore 336 - Temperature Monitoring
+# -----------------------------------------------------------------------------
+# ESS ERIC - ICS HWI group
+# -----------------------------------------------------------------------------
+# WP12 - douglas.bezerra.beniz@esss.se
+# -----------------------------------------------------------------------------
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+
+# -----------------------------------------------------------------------------
+# class objects
+# -----------------------------------------------------------------------------
+logger = ScriptUtil.getLogger()
+
+# Create matrix (2D array) of doubles
+dataTable = []
+
+# Reading wave-form from PV
+# $(PREFIX):CurveFile:Breakpoints
+waveFormData = PVUtil.getTable(pvs[0])
+
+# Debug purposes...
+# logger.info(str(waveFormData))
+
+# Auxiliary variables to control all the process
+newColIdx = 0
+row = []
+
+# Iterate over the data read from wave-form
+for data in waveFormData:
+    # Debug purposes...
+    # logger.info("data: %f" % data[0])
+    
+    # All data in the wave-form are a single array (1D), but the known structure
+    # is a set of 3 columns: [index, units, temperatures];
+    # it is necessary to artificially split the cells, three by three...
+    if newColIdx == 3:
+        newColIdx = 0
+        dataTable.append(row)
+        row = []
+    newData = 0
+    if newColIdx == 0:
+        # index, use integer, so
+        newData = int(data[0])
+    else:
+        newData = data[0]
+    row.append(str(newData))
+    
+    # Next column
+    newColIdx += 1
+
+# Adding the latest gathered row values
+dataTable.append(row)
+
+# Setting the array as the value to the table
+widget.setValue(dataTable)]]></text>
+          <pv_name>$(PREFIX):$(C):Breakpoints</pv_name>
+        </script>
+      </scripts>
+      <editable>false</editable>
+      <row_selection_mode>true</row_selection_mode>
+    </widget>
+  </widget>
+</display>

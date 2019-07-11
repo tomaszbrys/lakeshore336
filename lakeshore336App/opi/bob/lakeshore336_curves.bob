@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>LakeShore curves</name>
+  <macros>
+    <PREFIX>SES-FLUC:Tmonit-LS336-001</PREFIX>
+  </macros>
+  <width>844</width>
+  <height>732</height>
+  <grid_step_x>4</grid_step_x>
+  <grid_step_y>4</grid_step_y>
+  <widget type="rectangle" version="2.0.0">
+    <name>title-bar</name>
+    <class>TITLE-BAR</class>
+    <x use_class="true">0</x>
+    <y use_class="true">0</y>
+    <width>844</width>
+    <height use_class="true">50</height>
+    <line_width use_class="true">0</line_width>
+    <background_color use_class="true">
+      <color name="PRIMARY-HEADER-BACKGROUND" red="151" green="188" blue="202">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>title</name>
+    <class>HEADER2</class>
+    <text>LakeShore curves</text>
+    <x>20</x>
+    <width>260</width>
+    <height>50</height>
+    <font use_class="true">
+      <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color name="HEADER-TEXT" red="0" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color use_class="true">
+      <color name="Background" red="220" green="225" blue="221">
+      </color>
+    </background_color>
+    <transparent use_class="true">true</transparent>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>grpCurves</name>
+    <y>60</y>
+    <width>844</width>
+    <height>670</height>
+    <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_7</name>
+      <width>844</width>
+      <height>30</height>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+      <corner_width>10</corner_width>
+      <corner_height>10</corner_height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_8</name>
+      <y>10</y>
+      <width>844</width>
+      <line_width>0</line_width>
+      <background_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>grpTitleCurves</name>
+      <text>Curves</text>
+      <x>10</x>
+      <width>826</width>
+      <height>30</height>
+      <font>
+        <font name="Header 2" family="Source Sans Pro" style="BOLD_ITALIC" size="21.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <y>30</y>
+      <width>844</width>
+      <height>640</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblSelectAction</name>
+      <text>Select an action</text>
+      <x>22</x>
+      <y>40</y>
+      <width>104</width>
+      <height>25</height>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>cboAction</name>
+      <pv_name>loc://selectCurveAction&lt;VEnum&gt;(0, "Display installed curves", "Show available curve files", "Install curve")</pv_name>
+      <x>142</x>
+      <y>38</y>
+      <width>272</width>
+      <height>20</height>
+      <items>
+        <item>Item 0</item>
+        <item>Item 1</item>
+        <item>Item 2</item>
+      </items>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>embCurves</name>
+      <x>3</x>
+      <y>65</y>
+      <width>837</width>
+      <height>602</height>
+      <rules>
+        <rule name="Set the display file according to user selection" prop_id="file" out_exp="false">
+          <exp bool_exp="pv0==0">
+            <value>embedded/curve_show.bob</value>
+          </exp>
+          <exp bool_exp="pv0==1">
+            <value>embedded/curve_files.bob</value>
+          </exp>
+          <exp bool_exp="pv0==2">
+            <value>embedded/curve_install.bob</value>
+          </exp>
+          <pv_name>loc://selectCurveAction&lt;VEnum&gt;(0, "Display installed curves", "Show available curve files", "Install curve")</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+</display>

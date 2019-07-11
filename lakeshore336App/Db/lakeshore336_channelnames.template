@@ -1,0 +1,50 @@
+#####################################################################
+### PV for each channel for associated Curve number and Crv Nr readback
+## (Currentley not used by teh CSS .opi) 
+
+# PV holding each Channels Curve Nr individually (Readback value)
+record( ai , "$(P):Ch_$(ChIndex):CrvNr")
+{
+  field(DTYP, "stream")
+  field(INP,  "@setCurve_lakeshore336.proto getCRV($(ChIndex)) $(PORT) $(ADDR)")
+}
+
+# PV to set each Channels Curve Nr individually
+record( ao , "$(P):Ch_$(ChIndex)_S:CrvNr")
+{
+  field(DTYP, "stream")
+  field(OUT,  "@setCurve_lakeshore336.proto setCRV($(ChIndex)) $(PORT) $(ADDR)")
+  field(FLNK, "$(P):Ch_$(ChIndex):CrvNr.PROC CA")
+}
+
+#####################################################################
+
+#####################################################################
+### PVs for handling user curve selection from CSS .opi file
+
+
+# Set the channel "$(P):ch" to use the curve nr "Curve:Query" (from the 
+# "lakeshore336_Curve_Management" .db file)
+# This PVs purpose is to "collect" user selected Curve Nr and Channel and set those.
+record( ao , "$(P):SetCrvToCh")
+{
+  field(DTYP, "stream")
+  field(OUT,  "@setCurve_lakeshore336.proto C($(P):ch,$(P):Curve:Query) $(PORT) $(ADDR)") 
+  field(FLNK, "$(P):Ch:CrvNr.PROC CA")  
+  field(PINI, "YES")    
+}
+
+# This PV reads out the curve Nr of the user selected curve.
+record( ai , "$(P):Ch:CrvNr")
+{
+  field(DTYP, "stream")
+  field(INP,  "@setCurve_lakeshore336.proto getCRV2($(P):ch) $(PORT) $(ADDR)")
+}
+
+# A PV used in the CSS .opi file for user to select a Channel to 
+# which to set a curve number to. 
+record( stringin , "$(P):ch")
+{
+  field(FLNK, "$(P):Ch:CrvNr.PROC CA") 
+  field(PINI, "YES")
+}

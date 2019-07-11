@@ -2,8 +2,8 @@
 <display version="2.0.0">
   <name>LakeShore</name>
   <macros>
-    <IPADDR>10.0.7.141</IPADDR>
-    <PREFIX>UTG-SEE-TEFI:Tctrl-LS336-002</PREFIX>
+    <IPADDR>10.0.7.244</IPADDR>
+    <PREFIX>UTG-SEE-TEFI:Tmt-LS336-02</PREFIX>
   </macros>
   <width>1400</width>
   <height>780</height>
@@ -169,10 +169,10 @@
     <widget type="databrowser" version="2.0.0">
       <name>Data Browser</name>
       <file>graphs/plotXY.plt</file>
-      <x>10</x>
+      <x>3</x>
       <y>30</y>
-      <width>840</width>
-      <height>650</height>
+      <width>853</width>
+      <height>657</height>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">
@@ -236,7 +236,7 @@
       <transparent>true</transparent>
       <widget type="label" version="2.0.0">
         <name>lblTemperatures</name>
-        <text>Temperature[K]</text>
+        <text>Temperature</text>
         <width>120</width>
         <font>
           <font family="Source Sans Pro" style="BOLD" size="16.0">
@@ -246,6 +246,7 @@
           <color name="PRIMARY-DARK" red="31" green="83" blue="102">
           </color>
         </foreground_color>
+        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -260,8 +261,20 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
+        <rules>
+          <rule name="New Rule" prop_id="pv_name" out_exp="false">
+            <exp bool_exp="pv0 != 0">
+              <value>$(PREFIX):RDGST_ERR
+</value>
+            </exp>
+            <exp bool_exp="pv1 == 1">
+              <value>$(PREFIX):CRDG0</value>
+            </exp>
+            <pv_name>$(PREFIX):RDGST0</pv_name>
+            <pv_name trigger="false">loc://temp_state(0)</pv_name>
+          </rule>
+        </rules>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>txtKRDG2</name>
@@ -274,7 +287,6 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -288,7 +300,6 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -302,7 +313,6 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -319,8 +329,26 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
+        <rules>
+          <rule name="err" prop_id="pv_name" out_exp="false">
+            <exp bool_exp="pv0 != 0">
+              <value>$(PREFIX):RDGST_ERR
+
+
+
+</value>
+            </exp>
+            <exp bool_exp="pv1 == 1">
+              <value>$(PREFIX):CRDG4
+
+
+</value>
+            </exp>
+            <pv_name>$(PREFIX):RDGST4</pv_name>
+            <pv_name>loc://temp_state(0)</pv_name>
+          </rule>
+        </rules>
       </widget>
       <widget type="textupdate" version="2.0.0">
         <name>txtKRDG5</name>
@@ -333,7 +361,6 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -349,7 +376,6 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -364,7 +390,6 @@
         </font>
         <transparent>true</transparent>
         <precision>3</precision>
-        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
     </widget>
@@ -487,7 +512,7 @@
           <color name="PRIMARY-DARK" red="31" green="83" blue="102">
           </color>
         </foreground_color>
-        <horizontal_alignment>1</horizontal_alignment>
+        <horizontal_alignment>2</horizontal_alignment>
         <vertical_alignment>1</vertical_alignment>
       </widget>
       <widget type="textupdate" version="2.0.0">
@@ -684,33 +709,6 @@
         <vertical_alignment>1</vertical_alignment>
       </widget>
     </widget>
-    <widget type="action_button" version="3.0.0">
-      <name>Action Button</name>
-      <actions>
-        <action type="execute">
-          <script file="EmbeddedPy">
-            <text><![CDATA[# Embedded python script
-from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
-print 'Hello'
-# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
-          </script>
-          <description>Kelvin</description>
-        </action>
-        <action type="execute">
-          <script file="EmbeddedPy">
-            <text><![CDATA[# Embedded python script
-from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
-print 'Hello'
-# widget.setPropertyValue('text', PVUtil.getString(pvs[0]))]]></text>
-          </script>
-          <description>Celcius</description>
-        </action>
-      </actions>
-      <x>186</x>
-      <y>42</y>
-      <height>20</height>
-      <tooltip>$(actions)</tooltip>
-    </widget>
     <widget type="label" version="2.0.0">
       <name>lblTemperatures_3</name>
       <text>Temperature Units</text>
@@ -726,6 +724,141 @@ print 'Hello'
         </color>
       </foreground_color>
       <vertical_alignment>1</vertical_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>Action Button</name>
+      <pv_name>loc://selectTemp&lt;VEnum&gt;(1,"Kelvin", "Celcius")</pv_name>
+      <x>186</x>
+      <y>42</y>
+      <width>166</width>
+      <height>20</height>
+      <actions>
+      </actions>
+      <scripts>
+        <script file="EmbeddedPy">
+          <text><![CDATA[# Embedded python script
+from org.csstudio.display.builder.runtime.script import PVUtil, ScriptUtil
+
+
+
+logger = ScriptUtil.getLogger()
+
+selection = PVUtil.getInt(pvs[0])
+logger.info("selection: %s" % str(selection) )
+
+display = widget.getDisplayModel()
+macro1 = str(display.getPropertyValue("macros").getValue('PREFIX'))
+logger.info("macro1= " + macro1)
+
+
+WidgetKRDG0 = ScriptUtil.findWidgetByName(widget, "txtKRDG0")  
+WidgetKRDG1 = ScriptUtil.findWidgetByName(widget, "txtKRDG1")
+WidgetKRDG2 = ScriptUtil.findWidgetByName(widget, "txtKRDG2")
+WidgetKRDG3 = ScriptUtil.findWidgetByName(widget, "txtKRDG3")
+WidgetKRDG4 = ScriptUtil.findWidgetByName(widget, "txtKRDG4")
+WidgetKRDG5 = ScriptUtil.findWidgetByName(widget, "txtKRDG5")
+WidgetKRDG6 = ScriptUtil.findWidgetByName(widget, "txtKRDG6")
+WidgetKRDG7 = ScriptUtil.findWidgetByName(widget, "txtKRDG7")
+
+if selection == 1:
+   WidgetKRDG0.setPropertyValue('pv_name', macro1 + ':CRDG0')
+   WidgetKRDG1.setPropertyValue('pv_name', macro1 + ':CRDG1')
+   WidgetKRDG2.setPropertyValue('pv_name', macro1 + ':CRDG2')
+   WidgetKRDG3.setPropertyValue('pv_name', macro1 + ':CRDG3')
+   WidgetKRDG4.setPropertyValue('pv_name', macro1 + ':CRDG4')
+   WidgetKRDG5.setPropertyValue('pv_name', macro1 + ':CRDG5')
+   WidgetKRDG6.setPropertyValue('pv_name', macro1 + ':CRDG6')
+   WidgetKRDG7.setPropertyValue('pv_name', macro1 + ':CRDG7')
+else: 
+   WidgetKRDG0.setPropertyValue('pv_name', macro1 + ':KRDG0')
+   WidgetKRDG1.setPropertyValue('pv_name', macro1 + ':KRDG1')
+   WidgetKRDG2.setPropertyValue('pv_name', macro1 + ':KRDG2')
+   WidgetKRDG3.setPropertyValue('pv_name', macro1 + ':KRDG3')
+   WidgetKRDG4.setPropertyValue('pv_name', macro1 + ':KRDG4')
+   WidgetKRDG5.setPropertyValue('pv_name', macro1 + ':KRDG5')
+   WidgetKRDG6.setPropertyValue('pv_name', macro1 + ':KRDG6')
+   WidgetKRDG7.setPropertyValue('pv_name', macro1 + ':KRDG7')
+
+pv0 = PVUtil.createPV(macro1 + ':RDGST0', 1000)
+pv1 = PVUtil.createPV(macro1 + ':RDGST1', 1000)
+pv2 = PVUtil.createPV(macro1 + ':RDGST2', 1000)
+pv3 = PVUtil.createPV(macro1 + ':RDGST3', 1000)
+pv4 = PVUtil.createPV(macro1 + ':RDGST4', 1000)
+pv5 = PVUtil.createPV(macro1 + ':RDGST5', 1000)
+pv6 = PVUtil.createPV(macro1 + ':RDGST6', 1000)
+pv7 = PVUtil.createPV(macro1 + ':RDGST7', 1000)
+
+str0 = PVUtil.getString(pv0)
+str1 = PVUtil.getString(pv1)
+str2 = PVUtil.getString(pv2)
+str3 = PVUtil.getString(pv3)
+str4 = PVUtil.getString(pv4)
+str5 = PVUtil.getString(pv5)
+str6 = PVUtil.getString(pv6)
+str7 = PVUtil.getString(pv7)
+
+
+data0 = PVUtil.getInt(pv0)
+data1 = PVUtil.getInt(pv1)
+data2 = PVUtil.getInt(pv2)
+data3 = PVUtil.getInt(pv3)
+data4 = PVUtil.getInt(pv4)
+data5 = PVUtil.getInt(pv5)
+data6 = PVUtil.getInt(pv6)
+data7 = PVUtil.getInt(pv7)
+
+if data0 != 0:
+   WidgetKRDG0.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data0= " + str0)
+if data1 != 0:
+   WidgetKRDG1.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data1= " + str1)
+if data2 != 0:
+   WidgetKRDG2.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data2= " + str2)
+if data3 != 0:
+   WidgetKRDG3.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data3= " + str3)
+if data4 != 0:
+   WidgetKRDG4.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data4= " + str4)
+#if PVUtil.getString(pv5) != 0:
+if data5 != 0:
+   WidgetKRDG5.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data5= " + str5)
+if data6 != 0:
+   WidgetKRDG6.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data6= " + str6)
+if data7 != 0:
+   WidgetKRDG7.setPropertyValue('pv_name', macro1+':RDGST_ERR')
+   logger.info("data7= " + str7)
+
+#if data5 != 0:
+#   WidgetKRDG5.setPropertyValue('pv_name', macro1 + ':RDGST5')
+#   #WidgetKRDG5.setPropertyValue('value','Invalid')
+#   logger.info("data5= " + data5)
+#   logger.info("data0= " + data0)
+#else:
+#   #WidgetKRDG5.setPropertyValue('pv_name', macro1 + ':KRDG5')
+#   logger.info("data5= " + data5)
+#   logger.info("data0= " + data5)
+
+PVUtil.releasePV(pv0)
+PVUtil.releasePV(pv1)
+PVUtil.releasePV(pv2)
+PVUtil.releasePV(pv3)
+PVUtil.releasePV(pv4)
+PVUtil.releasePV(pv5)
+PVUtil.releasePV(pv6)
+PVUtil.releasePV(pv7)]]></text>
+          <pv_name>loc://selectTemp</pv_name>
+        </script>
+      </scripts>
+      <tooltip>$(actions)</tooltip>
+      <items>
+        <item>(Kelvin)</item>
+        <item>(Celcius)</item>
+      </items>
     </widget>
   </widget>
   <widget type="group" version="2.0.0">

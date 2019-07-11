@@ -128,7 +128,7 @@
       <name>butAsyn</name>
       <actions>
         <action type="open_display">
-          <file>../ess-opi-asyn/asynRecord.bob</file>
+          <file>../ESS/ess-opi-common/modules/asyn/bob/asynRecord.bob</file>
           <target>replace</target>
           <description>Open Display</description>
         </action>

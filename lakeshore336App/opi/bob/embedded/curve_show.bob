@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display version="2.0.0">
   <name>curve_show</name>
-  <width>837</width>
+  <macros>
+    <PREFIX>UTG-SEE-TEFI:Tmt-LS336-02</PREFIX>
+  </macros>
+  <width>850</width>
   <height>602</height>
   <widget type="group" version="2.0.0">
     <name>grpCurveWindow</name>
@@ -99,17 +102,6 @@
         <width>340</width>
         <height>388</height>
       </widget>
-    </widget>
-    <widget type="embedded" version="2.0.0">
-      <name>embCurvesMetadata</name>
-      <file>curve_metadata.bob</file>
-      <macros>
-        <C>Curve</C>
-      </macros>
-      <x>397</x>
-      <y>130</y>
-      <width>420</width>
-      <height>332</height>
     </widget>
     <widget type="group" version="2.0.0">
       <name>grpSetCurve</name>
@@ -282,5 +274,16 @@
         </point>
       </points>
     </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embCurvesMetadata</name>
+    <file>curve_metadata.bob</file>
+    <macros>
+      <C>Curve</C>
+    </macros>
+    <x>407</x>
+    <y>140</y>
+    <width>447</width>
+    <height>332</height>
   </widget>
 </display>

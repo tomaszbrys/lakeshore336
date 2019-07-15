@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_values</name>
+  <width>390</width>
+  <height>4000</height>
+  <scripts>
+    <script file="../scripts/generateCurveValueEntries.py">
+      <pv_name>loc://generateCurveValueEntries(1)</pv_name>
+    </script>
+  </scripts>
+</display>

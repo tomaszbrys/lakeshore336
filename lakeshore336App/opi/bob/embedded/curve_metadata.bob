@@ -2,12 +2,26 @@
 <display version="2.0.0">
   <name>curve_metadata</name>
   <width>420</width>
-  <height>330</height>
+  <height>442</height>
   <widget type="group" version="2.0.0">
     <name>grpCalibration</name>
     <width>420</width>
-    <height>330</height>
+    <height>442</height>
     <style>3</style>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_9</name>
+      <y>25</y>
+      <width>420</width>
+      <height>417</height>
+      <line_color>
+        <color name="GROUP-BORDER" red="150" green="155" blue="151">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
+        </color>
+      </background_color>
+    </widget>
     <widget type="rectangle" version="2.0.0">
       <name>Rectangle_7</name>
       <width>420</width>
@@ -44,25 +58,11 @@
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
     </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle_9</name>
-      <y>25</y>
-      <width>420</width>
-      <height>305</height>
-      <line_color>
-        <color name="GROUP-BORDER" red="150" green="155" blue="151">
-        </color>
-      </line_color>
-      <background_color>
-        <color name="GROUP-BACKGROUND" red="200" green="205" blue="201">
-        </color>
-      </background_color>
-    </widget>
     <widget type="label" version="2.0.0">
       <name>lblSensorModel</name>
       <text>Sensor model:</text>
-      <x>10</x>
-      <y>40</y>
+      <x>16</x>
+      <y>36</y>
       <width>150</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -74,8 +74,8 @@
     <widget type="textupdate" version="2.0.0">
       <name>txtSensorModel</name>
       <pv_name>$(PREFIX):$(C):SensorModel</pv_name>
-      <x>180</x>
-      <y>40</y>
+      <x>186</x>
+      <y>36</y>
       <width>220</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -87,8 +87,8 @@
     <widget type="label" version="2.0.0">
       <name>lblSerial</name>
       <text>Serial number:</text>
-      <x>10</x>
-      <y>90</y>
+      <x>16</x>
+      <y>66</y>
       <width>150</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -100,8 +100,8 @@
     <widget type="textupdate" version="2.0.0">
       <name>txtSerial</name>
       <pv_name>$(PREFIX):$(C):Serial</pv_name>
-      <x>180</x>
-      <y>90</y>
+      <x>186</x>
+      <y>66</y>
       <width>220</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -113,8 +113,8 @@
     <widget type="label" version="2.0.0">
       <name>lblDataFormat</name>
       <text>Data format:</text>
-      <x>10</x>
-      <y>140</y>
+      <x>16</x>
+      <y>96</y>
       <width>150</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -126,8 +126,8 @@
     <widget type="textupdate" version="2.0.0">
       <name>txtDataFormat</name>
       <pv_name>$(PREFIX):$(C):DataFormat</pv_name>
-      <x>180</x>
-      <y>140</y>
+      <x>186</x>
+      <y>96</y>
       <width>220</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -139,8 +139,8 @@
     <widget type="label" version="2.0.0">
       <name>lblSetpointLimit</name>
       <text>Setpoint limit:</text>
-      <x>10</x>
-      <y>190</y>
+      <x>16</x>
+      <y>126</y>
       <width>150</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -152,8 +152,8 @@
     <widget type="textupdate" version="2.0.0">
       <name>txtSetpointLimit</name>
       <pv_name>$(PREFIX):$(C):SetpointLimit</pv_name>
-      <x>180</x>
-      <y>190</y>
+      <x>186</x>
+      <y>126</y>
       <width>220</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -165,8 +165,8 @@
     <widget type="label" version="2.0.0">
       <name>lblTempCoeff</name>
       <text>Temperature coefficient:</text>
-      <x>10</x>
-      <y>240</y>
+      <x>16</x>
+      <y>156</y>
       <width>150</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -178,8 +178,8 @@
     <widget type="textupdate" version="2.0.0">
       <name>txtTempCoeff</name>
       <pv_name>$(PREFIX):$(C):TempCoeff</pv_name>
-      <x>180</x>
-      <y>240</y>
+      <x>186</x>
+      <y>156</y>
       <width>220</width>
       <font>
         <font family="Source Sans Pro" style="REGULAR" size="14.0">
@@ -188,31 +188,99 @@
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
     </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>Embedded Display</name>
+      <file>curve_values.bob</file>
+      <x>16</x>
+      <y>220</y>
+      <width>390</width>
+      <height>210</height>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle</name>
+      <x>15</x>
+      <y>196</y>
+      <width>392</width>
+      <height>25</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color name="BLACK-BORDER" red="121" green="121" blue="121">
+        </color>
+      </line_color>
+      <background_color>
+        <color name="BACKGROUND" red="220" green="225" blue="221">
+        </color>
+      </background_color>
+    </widget>
     <widget type="label" version="2.0.0">
-      <name>lblNumBreakpoints</name>
-      <text>Number of breakpoints:</text>
-      <x>10</x>
-      <y>290</y>
-      <width>150</width>
+      <name>lblCurvIndex</name>
+      <text>Index</text>
+      <x>30</x>
+      <y>199</y>
+      <width>40</width>
       <font>
-        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
         </font>
       </font>
       <horizontal_alignment>2</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
     </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>txtSensorModel_5</name>
-      <pv_name>$(PREFIX):$(C):NumBreakpoints</pv_name>
-      <x>180</x>
-      <y>290</y>
-      <width>220</width>
+    <widget type="label" version="2.0.0">
+      <name>lblPointVolts</name>
+      <text>Units</text>
+      <x>70</x>
+      <y>199</y>
       <font>
-        <font family="Source Sans Pro" style="REGULAR" size="14.0">
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
         </font>
       </font>
+      <background_color>
+        <color name="Read_Background" red="230" green="235" blue="232">
+        </color>
+      </background_color>
       <horizontal_alignment>1</horizontal_alignment>
       <vertical_alignment>1</vertical_alignment>
+      <actions execute_as_one="true">
+      </actions>
+      <tooltip>$(pv_name)</tooltip>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>lblPointKelvin</name>
+      <text>Temperature</text>
+      <x>170</x>
+      <y>199</y>
+      <font>
+        <font family="Source Sans Pro" style="BOLD" size="14.0">
+        </font>
+      </font>
+      <background_color>
+        <color name="Read_Background" red="230" green="235" blue="232">
+        </color>
+      </background_color>
+      <horizontal_alignment>1</horizontal_alignment>
+      <vertical_alignment>1</vertical_alignment>
+      <actions execute_as_one="true">
+      </actions>
+      <tooltip>$(pv_name)</tooltip>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>butPlotCurve</name>
+      <actions>
+        <action type="open_display">
+          <file>curve_values_plot.bob</file>
+          <target>standalone</target>
+          <description>Open Display</description>
+        </action>
+      </actions>
+      <text>Plot</text>
+      <x>330</x>
+      <y>200</y>
+      <width>70</width>
+      <height>18</height>
+      <font>
+        <font family="Source Code Pro" style="BOLD" size="12.0">
+        </font>
+      </font>
+      <tooltip>Curve plot</tooltip>
     </widget>
   </widget>
 </display>

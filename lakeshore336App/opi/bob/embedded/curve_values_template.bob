@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>curve_values_template</name>
+  <width>370</width>
+  <height>20</height>
+  <widget type="label" version="2.0.0">
+    <name>lblCurvIndex$(DATAPOINT)</name>
+    <text>$(DATAPOINT):</text>
+    <x>10</x>
+    <width>40</width>
+    <font>
+      <font family="Source Sans Pro" style="BOLD" size="14.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>txtPointVolts$(DATAPOINT)</name>
+    <pv_name>$(PREFIX):Curve:DP$(DATAPOINT).A</pv_name>
+    <x>50</x>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <transparent>true</transparent>
+    <precision>5</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions execute_as_one="true">
+    </actions>
+    <tooltip>$(pv_name)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>txtPointKelvin$(DATAPOINT)_1</name>
+    <pv_name>$(PREFIX):Curve:DP$(DATAPOINT).B</pv_name>
+    <x>150</x>
+    <font>
+      <font family="Source Sans Pro" style="REGULAR" size="14.0">
+      </font>
+    </font>
+    <transparent>true</transparent>
+    <precision>2</precision>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <actions execute_as_one="true">
+    </actions>
+    <tooltip>$(pv_name)</tooltip>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

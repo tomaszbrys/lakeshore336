@@ -2,6 +2,7 @@
 <display version="2.0.0">
   <name>LakeShore</name>
   <macros>
+    <CALIB_FILES_REMOTE_PATH>/epics/iocs/cmds/labs-utg-lakeshore336/misc</CALIB_FILES_REMOTE_PATH>
     <IPADDR>10.0.7.244</IPADDR>
     <PREFIX>UTG-SEE-TEFI:Tmt-LS336-02</PREFIX>
   </macros>

@@ -17,9 +17,9 @@ from array import array
 from jarray import zeros
 
 # -----------------------------------------------------------------------------
-# Maximum number of curve names is 59
+# Maximum number of curve datapoints is 200
 # -----------------------------------------------------------------------------
-MAX_CURVE_NAMES = 59
+MAX_DATA_POINTS = 200
 
 # -----------------------------------------------------------------------------
 # class objects
@@ -53,7 +53,7 @@ def generatorProcedure():
         # For each 'channel', add one embedded display
         # which then links to the curve_name_template.bob
         # with the macros of the device.
-        embedded_width  = 280
+        embedded_width  = 370
         embedded_height = 20
 
         def createInstance(x, y, macros):
@@ -65,7 +65,7 @@ def generatorProcedure():
             embedded.setPropertyValue("resize", "2")
             for macro, value in macros.items():
                 embedded.getPropertyValue("macros").add(macro, value)
-            embedded.setPropertyValue("file", "curve_names_template.bob")
+            embedded.setPropertyValue("file", "curve_values_template.bob")
             return embedded
 
         #display = widget.getDisplayModel()
@@ -75,10 +75,10 @@ def generatorProcedure():
         # resolution of display
         resX = 800
         resY = 600
-        for i in range(MAX_CURVE_NAMES):
+        for i in range(MAX_DATA_POINTS):
             x = startX
             y = startY + (embedded_height * (i))
-            instance = createInstance(x, y, {'CURVE':str(i+1)})
+            instance = createInstance(x, y, {'DATAPOINT':str(i+1)})
             display.runtimeChildren().addChild(instance)
     except Exception as e:
         logger.warning("Error! %s " % str(e))
